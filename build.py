@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Generate a multilingual 'Iconic Locations of the Basque Country' site (en/es/eu/fr)."""
+"""Generate a single-page multilingual 'Iconic Locations of the Basque Country' site.
+Language switching happens in-place (no separate pages)."""
 import json, html
 from urllib.parse import quote
 
 META = json.load(open("meta.json"))
+LANGS = ["en", "es", "eu", "fr"]
+LANG_LABEL = {"en": "English", "es": "Espa\u00f1ol", "eu": "Euskara", "fr": "Fran\u00e7ais"}
 
 def ipath(slug):
     return META.get(slug, {}).get("path", "")
@@ -15,10 +18,6 @@ def credit(slug):
     page = "https://commons.wikimedia.org/wiki/" + quote(m.get("title", "").replace(" ", "_"))
     return (f'Photo: {html.escape(m.get("artist","Unknown"))} \u00b7 '
             f'<a href="{page}" target="_blank" rel="noopener">{html.escape(m.get("license","See source"))}</a>')
-
-LANGS = ["en", "es", "eu", "fr"]
-LANG_LABEL = {"en": "English", "es": "Espa\u00f1ol", "eu": "Euskara", "fr": "Fran\u00e7ais"}
-PAGE_FILE = {"en": "index.html", "es": "es.html", "eu": "eu.html", "fr": "fr.html"}
 
 REGION_NAMES = {
  "en": {"Bizkaia":"Bizkaia","Gipuzkoa":"Gipuzkoa","Araba":"Araba","Navarre":"Navarre","Iparralde":"Iparralde"},
@@ -255,6 +254,81 @@ UI = {
    footer="Guide informatif r\u00e9alis\u00e9 par un passionn\u00e9 sur les lieux embl\u00e9matiques du Pays basque / Euskal Herria. Les descriptions sont fournies de bonne foi ; les photographies sont cr\u00e9dit\u00e9es \u00e0 leurs auteurs selon leurs licences respectives."),
 }
 
+# ---- build the JS dictionary ----------------------------------------------
+UI_KEYS = ["nav_about","nav_places","nav_credits","hero_title","hero_sub","hero_lead","cta1","cta2",
+           "about_tag","about_h2","about_p1","about_p2","about_p3","caption","places_tag","places_h2",
+           "places_sub","all","credits_summary","footer"]
+
+def build_i18n():
+    d = {lg: {} for lg in LANGS}
+    for lg in LANGS:
+        u = UI[lg]
+        d[lg]["title"] = u["title"]
+        for k in UI_KEYS:
+            d[lg][k] = u[k]
+        for i, (kk, ll) in enumerate(u["facts"]):
+            d[lg][f"fact_{i}_k"] = kk
+            d[lg][f"fact_{i}_l"] = ll
+        for loc in LOCATIONS:
+            name, alt, desc = loc["i18n"][lg]
+            d[lg][f"loc_{loc['slug']}_name"] = name
+            d[lg][f"loc_{loc['slug']}_alt"] = alt
+            d[lg][f"loc_{loc['slug']}_desc"] = desc
+        for r in REGION_COLOR:
+            d[lg][f"region_{r}"] = REGION_NAMES[lg][r]
+        for t in TAGS:
+            d[lg][f"tag_{t}"] = TAGS[t][lg]
+    return d
+
+I18N = build_i18n()
+
+def card(l):
+    name, alt, desc = l["i18n"]["en"]
+    p = ipath(l["slug"])
+    tags = "".join(f'<span class="chip" data-i18n="tag_{t}">{html.escape(TAGS[t]["en"])}</span>' for t in l["tags"])
+    return f"""
+      <article class="loc" data-region="{l['region']}">
+        <div class="loc-img">
+          <img src="{html.escape(p)}" alt="{html.escape(name)}" loading="lazy" />
+          <span class="region-badge" style="--rc:{REGION_COLOR[l['region']]}" data-i18n="region_{l['region']}">{html.escape(REGION_NAMES['en'][l['region']])}</span>
+        </div>
+        <div class="loc-body">
+          <h3 data-i18n="loc_{l['slug']}_name">{html.escape(name)}</h3>
+          <div class="alt" data-i18n="loc_{l['slug']}_alt">{html.escape(alt)}</div>
+          <p data-i18n="loc_{l['slug']}_desc">{html.escape(desc)}</p>
+          <div class="chips">{tags}</div>
+          <div class="credit">{credit(l['slug'])}</div>
+        </div>
+      </article>"""
+
+def credits_list():
+    items = []
+    for slug, m in META.items():
+        page = "https://commons.wikimedia.org/wiki/" + quote(m.get("title", "").replace(" ", "_"))
+        items.append(f'<li>{html.escape(m.get("artist","Unknown"))} \u2014 '
+                     f'<a href="{page}" target="_blank" rel="noopener">{html.escape(m.get("license","See source"))}</a></li>')
+    return "".join(items)
+
+LAUBURU = ('<svg class="lauburu" viewBox="0 0 100 100" aria-hidden="true">'
+           + "".join(f'<path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate({a} 50 50)"/>'
+                     for a in (0, 90, 180, 270)) + '</svg>')
+
+HERO = ipath("gaztelugatxe")
+INTRO_IMG = ipath("zumaia-flysch")
+u = UI["en"]  # English is the default rendered content; JS swaps it live
+
+cards = "".join(card(l) for l in LOCATIONS)
+filters = "".join(f'<button class="filter" data-f="{r}" style="--rc:{c}" data-i18n="region_{r}">{html.escape(REGION_NAMES["en"][r])}</button>'
+                  for r, c in REGION_COLOR.items())
+facts = "".join(
+    f'<div class="fact {"r" if i==0 else ("g" if i==1 else "")}">'
+    f'<span class="k" data-i18n="fact_{i}_k">{html.escape(k)}</span>'
+    f'<span class="l" data-i18n="fact_{i}_l">{l}</span></div>'
+    for i, (k, l) in enumerate(u["facts"]))
+lang_buttons = "".join(
+    f'<button data-lang="{lg}"{" class=\"active\"" if lg=="en" else ""}>{LANG_LABEL[lg]}</button>'
+    for lg in LANGS)
+
 CSS = """
   :root{--cream:#f7f4ee;--paper:#fff;--ink:#20261f;--muted:#6b746a;--red:#c8102e;--green:#0b7a3b;--line:#e4ded2;}
   *{box-sizing:border-box}
@@ -270,10 +344,10 @@ CSS = """
   nav.top .links{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap}
   nav.top .links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:600}
   nav.top .links a:hover{color:var(--ink)}
-  .langs{display:flex;gap:.3rem;border:1px solid var(--line);border-radius:999px;padding:.2rem;background:#fff}
-  .langs a{font-size:.76rem;font-weight:700;color:var(--muted);text-decoration:none;padding:.28rem .6rem;border-radius:999px}
-  .langs a:hover{color:var(--ink)}
-  .langs a.active{background:var(--red);color:#fff}
+  .langs{display:flex;gap:.25rem;border:1px solid var(--line);border-radius:999px;padding:.2rem;background:#fff}
+  .langs button{font:inherit;font-size:.76rem;font-weight:700;color:var(--muted);background:none;border:0;cursor:pointer;padding:.28rem .6rem;border-radius:999px}
+  .langs button:hover{color:var(--ink)}
+  .langs button.active{background:var(--red);color:#fff}
   .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#111}
   .hero .bg{position:absolute;inset:0;background-size:cover;background-position:center 40%}
   .hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,15,.35),rgba(15,20,15,.72) 60%,rgba(15,20,15,.92))}
@@ -328,65 +402,42 @@ CSS = """
 """
 
 JS = """
-  var btns=document.querySelectorAll('.filter'),cards=document.querySelectorAll('.loc');
-  btns.forEach(function(b){b.addEventListener('click',function(){
-    btns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
+  var I18N = __I18N__;
+  function setLang(lang){
+    if(!I18N[lang]) lang='en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      var v = (I18N[lang] && I18N[lang][k] != null) ? I18N[lang][k] : (I18N.en[k] != null ? I18N.en[k] : null);
+      if(v !== null) el.innerHTML = v;
+    });
+    if(I18N[lang].title) document.title = I18N[lang].title;
+    document.querySelectorAll('.langs button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    });
+    try{ localStorage.setItem('basque-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
+  // in-page filters
+  var fbtns=document.querySelectorAll('.filter'), fcards=document.querySelectorAll('.loc');
+  fbtns.forEach(function(b){b.addEventListener('click',function(){
+    fbtns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
     var f=b.dataset.f;
-    cards.forEach(function(c){c.classList.toggle('hide',!(f==='all'||c.dataset.region===f));});
+    fcards.forEach(function(c){c.classList.toggle('hide',!(f==='all'||c.dataset.region===f));});
   });});
-"""
+  // initial language: saved choice, else browser language, else English
+  (function(){
+    var saved=null; try{ saved=localStorage.getItem('basque-lang'); }catch(e){}
+    var nav=((navigator.language||'en')+'').slice(0,2).toLowerCase();
+    var init = saved || (['en','es','eu','fr'].indexOf(nav)>=0 ? nav : 'en');
+    setLang(init);
+  })();
+""".replace("__I18N__", json.dumps(I18N, ensure_ascii=False))
 
-LAUBURU = ('<svg class="lauburu" viewBox="0 0 100 100" aria-hidden="true">'
-           + "".join(f'<path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate({a} 50 50)"/>'
-                     for a in (0, 90, 180, 270)) + '</svg>')
-
-HERO = ipath("gaztelugatxe")
-INTRO_IMG = ipath("zumaia-flysch")
-
-def lang_switch(active):
-    out = []
-    for lg in LANGS:
-        cls = ' class="active"' if lg == active else ""
-        out.append(f'<a href="{PAGE_FILE[lg]}" hreflang="{lg}"{cls}>{LANG_LABEL[lg]}</a>')
-    return "".join(out)
-
-def card(l, lang):
-    name, alt, desc = l["i18n"][lang]
-    p = ipath(l["slug"])
-    tags = "".join(f'<span class="chip">{html.escape(TAGS[t][lang])}</span>' for t in l["tags"])
-    return f"""
-      <article class="loc" data-region="{l['region']}">
-        <div class="loc-img">
-          <img src="{html.escape(p)}" alt="{html.escape(name)}" loading="lazy" />
-          <span class="region-badge" style="--rc:{REGION_COLOR[l['region']]}">{html.escape(REGION_NAMES[lang][l['region']])}</span>
-        </div>
-        <div class="loc-body">
-          <h3>{html.escape(name)}</h3>
-          <div class="alt">{html.escape(alt)}</div>
-          <p>{html.escape(desc)}</p>
-          <div class="chips">{tags}</div>
-          <div class="credit">{credit(l['slug'])}</div>
-        </div>
-      </article>"""
-
-def credits_list():
-    items = []
-    for slug, m in META.items():
-        page = "https://commons.wikimedia.org/wiki/" + quote(m.get("title", "").replace(" ", "_"))
-        items.append(f'<li>{html.escape(m.get("artist","Unknown"))} \u2014 '
-                     f'<a href="{page}" target="_blank" rel="noopener">{html.escape(m.get("license","See source"))}</a></li>')
-    return "".join(items)
-
-def build_page(lang):
-    u = UI[lang]
-    cards = "".join(card(l, lang) for l in LOCATIONS)
-    filters = "".join(f'<button class="filter" data-f="{r}" style="--rc:{c}">{html.escape(REGION_NAMES[lang][r])}</button>'
-                      for r, c in REGION_COLOR.items())
-    facts = "".join(
-        f'<div class="fact {"r" if i==0 else ("g" if i==1 else "")}"><span class="k">{k}</span><span class="l">{l}</span></div>'
-        for i, (k, l) in enumerate(u["facts"]))
-    return f"""<!DOCTYPE html>
-<html lang="{lang}">
+HTML = f"""<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -405,10 +456,10 @@ def build_page(lang):
 <nav class="top"><div class="inner">
   <div class="logo">{LAUBURU} Basque Country \u00b7 Euskal Herria</div>
   <div class="links">
-    <a class="nava" href="#about">{html.escape(u['nav_about'])}</a>
-    <a class="nava" href="#places">{html.escape(u['nav_places'])}</a>
-    <a class="nava" href="#credits">{html.escape(u['nav_credits'])}</a>
-    <div class="langs">{lang_switch(lang)}</div>
+    <a class="nava" href="#about" data-i18n="nav_about">{html.escape(u['nav_about'])}</a>
+    <a class="nava" href="#places" data-i18n="nav_places">{html.escape(u['nav_places'])}</a>
+    <a class="nava" href="#credits" data-i18n="nav_credits">{html.escape(u['nav_credits'])}</a>
+    <div class="langs">{lang_buttons}</div>
   </div>
 </div></nav>
 
@@ -416,27 +467,27 @@ def build_page(lang):
   <div class="bg" style="background-image:url('{html.escape(HERO)}')"></div><div class="shade"></div>
   <div class="content wrap">
     <div class="eyebrow">{LAUBURU} Euskal Herria</div>
-    <h1>{html.escape(u['hero_title'])}</h1>
-    <div class="sub">{html.escape(u['hero_sub'])}</div>
-    <p class="lead">{html.escape(u['hero_lead'])}</p>
+    <h1 data-i18n="hero_title">{html.escape(u['hero_title'])}</h1>
+    <div class="sub" data-i18n="hero_sub">{html.escape(u['hero_sub'])}</div>
+    <p class="lead" data-i18n="hero_lead">{html.escape(u['hero_lead'])}</p>
     <div class="cta">
-      <a class="btn alt" href="#places">{html.escape(u['cta1'])}</a>
-      <a class="btn" href="#about">{html.escape(u['cta2'])}</a>
+      <a class="btn alt" href="#places" data-i18n="cta1">{html.escape(u['cta1'])}</a>
+      <a class="btn" href="#about" data-i18n="cta2">{html.escape(u['cta2'])}</a>
     </div>
   </div>
 </header>
 
 <section id="about"><div class="wrap">
-  <div class="sec-head"><div class="tag">{html.escape(u['about_tag'])}</div><h2>{html.escape(u['about_h2'])}</h2></div>
+  <div class="sec-head"><div class="tag" data-i18n="about_tag">{html.escape(u['about_tag'])}</div><h2 data-i18n="about_h2">{html.escape(u['about_h2'])}</h2></div>
   <div class="intro">
     <div>
-      <p>{u['about_p1']}</p>
-      <p>{u['about_p2']}</p>
-      <p>{u['about_p3']}</p>
+      <p data-i18n="about_p1">{u['about_p1']}</p>
+      <p data-i18n="about_p2">{u['about_p2']}</p>
+      <p data-i18n="about_p3">{u['about_p3']}</p>
     </div>
     <figure>
       <img src="{html.escape(INTRO_IMG)}" alt="{html.escape(u['caption'])}" />
-      <figcaption>{html.escape(u['caption'])}</figcaption>
+      <figcaption data-i18n="caption">{html.escape(u['caption'])}</figcaption>
     </figure>
   </div>
 </div></section>
@@ -446,10 +497,10 @@ def build_page(lang):
 </div></section>
 
 <section id="places" style="padding-top:0"><div class="wrap">
-  <div class="sec-head"><div class="tag">{html.escape(u['places_tag'])}</div><h2>{html.escape(u['places_h2'])}</h2>
-    <p>{html.escape(u['places_sub'])}</p></div>
+  <div class="sec-head"><div class="tag" data-i18n="places_tag">{html.escape(u['places_tag'])}</div><h2 data-i18n="places_h2">{html.escape(u['places_h2'])}</h2>
+    <p data-i18n="places_sub">{html.escape(u['places_sub'])}</p></div>
   <div class="filters">
-    <button class="filter active" data-f="all" style="--rc:#20261f">{html.escape(u['all'])}</button>
+    <button class="filter active" data-f="all" style="--rc:#20261f" data-i18n="all">{html.escape(u['all'])}</button>
     {filters}
   </div>
   <div class="grid">{cards}
@@ -458,10 +509,10 @@ def build_page(lang):
 
 <div class="wrap" id="credits">
   <details class="credits">
-    <summary>{u['credits_summary']}</summary>
+    <summary data-i18n="credits_summary">{u['credits_summary']}</summary>
     <ul>{credits_list()}</ul>
   </details>
-  <footer>{html.escape(u['footer'])}</footer>
+  <footer data-i18n="footer">{html.escape(u['footer'])}</footer>
 </div>
 
 <script>{JS}</script>
@@ -469,7 +520,5 @@ def build_page(lang):
 </html>
 """
 
-for lang in LANGS:
-    html_out = build_page(lang)
-    open(PAGE_FILE[lang], "w").write(html_out)
-    print(f"wrote {PAGE_FILE[lang]} ({lang}) {len(html_out)} bytes")
+open("index.html", "w").write(HTML)
+print("wrote index.html", len(HTML), "bytes (single page, 4 languages)")

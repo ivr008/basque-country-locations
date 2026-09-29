@@ -27,10 +27,10 @@
   nav.top .links{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap}
   nav.top .links a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:600}
   nav.top .links a:hover{color:var(--ink)}
-  .langs{display:flex;gap:.3rem;border:1px solid var(--line);border-radius:999px;padding:.2rem;background:#fff}
-  .langs a{font-size:.76rem;font-weight:700;color:var(--muted);text-decoration:none;padding:.28rem .6rem;border-radius:999px}
-  .langs a:hover{color:var(--ink)}
-  .langs a.active{background:var(--red);color:#fff}
+  .langs{display:flex;gap:.25rem;border:1px solid var(--line);border-radius:999px;padding:.2rem;background:#fff}
+  .langs button{font:inherit;font-size:.76rem;font-weight:700;color:var(--muted);background:none;border:0;cursor:pointer;padding:.28rem .6rem;border-radius:999px}
+  .langs button:hover{color:var(--ink)}
+  .langs button.active{background:var(--red);color:#fff}
   .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;overflow:hidden;background:#111}
   .hero .bg{position:absolute;inset:0;background-size:cover;background-position:center 40%}
   .hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,20,15,.35),rgba(15,20,15,.72) 60%,rgba(15,20,15,.92))}
@@ -88,10 +88,10 @@
 <nav class="top"><div class="inner">
   <div class="logo"><svg class="lauburu" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(0 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(90 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(180 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(270 50 50)"/></svg> Basque Country · Euskal Herria</div>
   <div class="links">
-    <a class="nava" href="#about">About</a>
-    <a class="nava" href="#places">Locations</a>
-    <a class="nava" href="#credits">Credits</a>
-    <div class="langs"><a href="index.html" hreflang="en" class="active">English</a><a href="es.html" hreflang="es">Español</a><a href="eu.html" hreflang="eu">Euskara</a><a href="fr.html" hreflang="fr">Français</a></div>
+    <a class="nava" href="#about" data-i18n="nav_about">About</a>
+    <a class="nava" href="#places" data-i18n="nav_places">Locations</a>
+    <a class="nava" href="#credits" data-i18n="nav_credits">Credits</a>
+    <div class="langs"><button data-lang="en" class="active">English</button><button data-lang="es">Español</button><button data-lang="eu">Euskara</button><button data-lang="fr">Français</button></div>
   </div>
 </div></nav>
 
@@ -99,118 +99,118 @@
   <div class="bg" style="background-image:url('images/gaztelugatxe.jpg')"></div><div class="shade"></div>
   <div class="content wrap">
     <div class="eyebrow"><svg class="lauburu" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(0 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(90 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(180 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(270 50 50)"/></svg> Euskal Herria</div>
-    <h1>The Basque Country</h1>
-    <div class="sub">Iconic locations of a land between the mountains and the sea</div>
-    <p class="lead">Twenty-four remarkable places across Bizkaia, Gipuzkoa, Araba, Navarre and Iparralde — from Frank Gehry&#x27;s titanium museum and dragon-stone staircases to painted flysch cliffs, salt valleys and witch-caves.</p>
+    <h1 data-i18n="hero_title">The Basque Country</h1>
+    <div class="sub" data-i18n="hero_sub">Iconic locations of a land between the mountains and the sea</div>
+    <p class="lead" data-i18n="hero_lead">Twenty-four remarkable places across Bizkaia, Gipuzkoa, Araba, Navarre and Iparralde — from Frank Gehry&#x27;s titanium museum and dragon-stone staircases to painted flysch cliffs, salt valleys and witch-caves.</p>
     <div class="cta">
-      <a class="btn alt" href="#places">Explore the Locations</a>
-      <a class="btn" href="#about">About the Region</a>
+      <a class="btn alt" href="#places" data-i18n="cta1">Explore the Locations</a>
+      <a class="btn" href="#about" data-i18n="cta2">About the Region</a>
     </div>
   </div>
 </header>
 
 <section id="about"><div class="wrap">
-  <div class="sec-head"><div class="tag">The Region</div><h2>A country of seven provinces</h2></div>
+  <div class="sec-head"><div class="tag" data-i18n="about_tag">The Region</div><h2 data-i18n="about_h2">A country of seven provinces</h2></div>
   <div class="intro">
     <div>
-      <p>The Basque Country — <em>Euskal Herria</em>, “the land of the Basque speakers” — straddles the western Pyrenees where Spain meets France. It is home to the Basques, one of Europe's oldest peoples, with a language, <em>Euskara</em>, that is a mystery to linguists: a living isolate unrelated to any other tongue on Earth.</p>
-      <p>Historically it counts seven provinces: <strong>Bizkaia</strong>, <strong>Gipuzkoa</strong>, <strong>Araba</strong> and <strong>Navarre</strong> in Spain, and <strong>Lapurdi</strong>, <strong>Zuberoa</strong> and <strong>Behe Nafarroa</strong> (together <em>Iparralde</em>) in France. The landscape runs from wild Atlantic surf beaches and fishing villages to green mountain valleys, vineyards and three of the country's great modern museums.</p>
-      <p>Its people are fiercely proud of their identity — expressed in the red, green and white <em>Ikurriña</em> flag, the swirling <em>lauburu</em> symbol, the sport of <em>pelota</em>, and a culinary culture that has made San Sebastián one of the greatest places to eat on the planet.</p>
+      <p data-i18n="about_p1">The Basque Country — <em>Euskal Herria</em>, “the land of the Basque speakers” — straddles the western Pyrenees where Spain meets France. It is home to the Basques, one of Europe's oldest peoples, with a language, <em>Euskara</em>, that is a mystery to linguists: a living isolate unrelated to any other tongue on Earth.</p>
+      <p data-i18n="about_p2">Historically it counts seven provinces: <strong>Bizkaia</strong>, <strong>Gipuzkoa</strong>, <strong>Araba</strong> and <strong>Navarre</strong> in Spain, and <strong>Lapurdi</strong>, <strong>Zuberoa</strong> and <strong>Behe Nafarroa</strong> (together <em>Iparralde</em>) in France. The landscape runs from wild Atlantic surf beaches and fishing villages to green mountain valleys, vineyards and three of the country's great modern museums.</p>
+      <p data-i18n="about_p3">Its people are fiercely proud of their identity — expressed in the red, green and white <em>Ikurriña</em> flag, the swirling <em>lauburu</em> symbol, the sport of <em>pelota</em>, and a culinary culture that has made San Sebastián one of the greatest places to eat on the planet.</p>
     </div>
     <figure>
       <img src="images/zumaia-flysch.jpg" alt="The flysch cliffs of Zumaia — 60 million years of Earth history, on the Gipuzkoa coast." />
-      <figcaption>The flysch cliffs of Zumaia — 60 million years of Earth history, on the Gipuzkoa coast.</figcaption>
+      <figcaption data-i18n="caption">The flysch cliffs of Zumaia — 60 million years of Earth history, on the Gipuzkoa coast.</figcaption>
     </figure>
   </div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-  <div class="facts"><div class="fact r"><span class="k">7</span><span class="l">Traditional provinces</span></div><div class="fact g"><span class="k">Euskara</span><span class="l">Europe's oldest language isolate</span></div><div class="fact "><span class="k">3</span><span class="l">UNESCO listings featured here</span></div><div class="fact "><span class="k">1</span><span class="l">World-famous left-hand wave (Mundaka)</span></div><div class="fact "><span class="k">≈ 3M</span><span class="l">Basque speakers &amp; residents</span></div><div class="fact "><span class="k">Bay of Biscay</span><span class="l">Wild Atlantic coastline</span></div></div>
+  <div class="facts"><div class="fact r"><span class="k" data-i18n="fact_0_k">7</span><span class="l" data-i18n="fact_0_l">Traditional provinces</span></div><div class="fact g"><span class="k" data-i18n="fact_1_k">Euskara</span><span class="l" data-i18n="fact_1_l">Europe's oldest language isolate</span></div><div class="fact "><span class="k" data-i18n="fact_2_k">3</span><span class="l" data-i18n="fact_2_l">UNESCO listings featured here</span></div><div class="fact "><span class="k" data-i18n="fact_3_k">1</span><span class="l" data-i18n="fact_3_l">World-famous left-hand wave (Mundaka)</span></div><div class="fact "><span class="k" data-i18n="fact_4_k">≈ 3M</span><span class="l" data-i18n="fact_4_l">Basque speakers &amp; residents</span></div><div class="fact "><span class="k" data-i18n="fact_5_k">Bay of Biscay</span><span class="l" data-i18n="fact_5_l">Wild Atlantic coastline</span></div></div>
 </div></section>
 
 <section id="places" style="padding-top:0"><div class="wrap">
-  <div class="sec-head"><div class="tag">The Locations</div><h2>Places worth crossing the world for</h2>
-    <p>Filter by province or region. Colours match the badges on each place.</p></div>
+  <div class="sec-head"><div class="tag" data-i18n="places_tag">The Locations</div><h2 data-i18n="places_h2">Places worth crossing the world for</h2>
+    <p data-i18n="places_sub">Filter by province or region. Colours match the badges on each place.</p></div>
   <div class="filters">
-    <button class="filter active" data-f="all" style="--rc:#20261f">All</button>
-    <button class="filter" data-f="Bizkaia" style="--rc:#c8102e">Bizkaia</button><button class="filter" data-f="Gipuzkoa" style="--rc:#0b7a3b">Gipuzkoa</button><button class="filter" data-f="Araba" style="--rc:#b06a00">Araba</button><button class="filter" data-f="Navarre" style="--rc:#6a2c8f">Navarre</button><button class="filter" data-f="Iparralde" style="--rc:#1c6ea4">Iparralde</button>
+    <button class="filter active" data-f="all" style="--rc:#20261f" data-i18n="all">All</button>
+    <button class="filter" data-f="Bizkaia" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</button><button class="filter" data-f="Gipuzkoa" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</button><button class="filter" data-f="Araba" style="--rc:#b06a00" data-i18n="region_Araba">Araba</button><button class="filter" data-f="Navarre" style="--rc:#6a2c8f" data-i18n="region_Navarre">Navarre</button><button class="filter" data-f="Iparralde" style="--rc:#1c6ea4" data-i18n="region_Iparralde">Iparralde</button>
   </div>
   <div class="grid">
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/bilbao.jpg" alt="Bilbao" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>Bilbao</h3>
-          <div class="alt">Bilbo</div>
-          <p>The largest city in the Basque Country and its cultural engine. Once a gritty industrial port, Bilbao reinvented itself as a capital of design and art, with a walkable Casco Viejo, a celebrated food scene and riverside promenades that draw you toward the Guggenheim.</p>
-          <div class="chips"><span class="chip">City</span><span class="chip">Culture</span></div>
+          <h3 data-i18n="loc_bilbao_name">Bilbao</h3>
+          <div class="alt" data-i18n="loc_bilbao_alt">Bilbo</div>
+          <p data-i18n="loc_bilbao_desc">The largest city in the Basque Country and its cultural engine. Once a gritty industrial port, Bilbao reinvented itself as a capital of design and art, with a walkable Casco Viejo, a celebrated food scene and riverside promenades that draw you toward the Guggenheim.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_city">City</span><span class="chip" data-i18n="tag_culture">Culture</span></div>
           <div class="credit">Photo: Tommie Hansen, Ardfern, Tomas Fano, 0Igor González Martín, Jesús Ignacio Bravo Soler, Pedro J Pacheco, Irekia/Gobierno Vasco, Euskaldunaa, Basotxerri, Eric Fischer, Tiia Monto, pictures Jettcom y Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3ACollage_de_Bilbao%2C_Pa%C3%ADs_Vasco%2C_Espa%C3%B1a.png" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/guggenheim.jpg" alt="Guggenheim Museum Bilbao" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>Guggenheim Museum Bilbao</h3>
-          <div class="alt">Guggenheim Bilbao Museoa</div>
-          <p>Frank Gehry&#x27;s titanium masterpiece, opened in 1997, turned a fading shipbuilding city into a global destination. Its shimmering, ship-like curves — guarded by Jeff Koons&#x27;s giant “Puppy” — are the emblem of Bilbao&#x27;s rebirth.</p>
-          <div class="chips"><span class="chip">Art</span><span class="chip">Architecture</span></div>
+          <h3 data-i18n="loc_guggenheim_name">Guggenheim Museum Bilbao</h3>
+          <div class="alt" data-i18n="loc_guggenheim_alt">Guggenheim Bilbao Museoa</div>
+          <p data-i18n="loc_guggenheim_desc">Frank Gehry&#x27;s titanium masterpiece, opened in 1997, turned a fading shipbuilding city into a global destination. Its shimmering, ship-like curves — guarded by Jeff Koons&#x27;s giant “Puppy” — are the emblem of Bilbao&#x27;s rebirth.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_art">Art</span><span class="chip" data-i18n="tag_architecture">Architecture</span></div>
           <div class="credit">Photo: Naotake Murayama · <a href="https://commons.wikimedia.org/wiki/File%3AMuseo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg" target="_blank" rel="noopener">CC BY 2.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/gaztelugatxe.jpg" alt="San Juan de Gaztelugatxe" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>San Juan de Gaztelugatxe</h3>
-          <div class="alt">Gaztelugatxe</div>
-          <p>A stone hermitage perched on a tiny islet, reached by a winding stone bridge and 241 steps. Famous worldwide as “Dragonstone” in Game of Thrones, it is the most dramatic spot on the Biscay coast.</p>
-          <div class="chips"><span class="chip">Natural wonder</span><span class="chip">Heritage</span></div>
+          <h3 data-i18n="loc_gaztelugatxe_name">San Juan de Gaztelugatxe</h3>
+          <div class="alt" data-i18n="loc_gaztelugatxe_alt">Gaztelugatxe</div>
+          <p data-i18n="loc_gaztelugatxe_desc">A stone hermitage perched on a tiny islet, reached by a winding stone bridge and 241 steps. Famous worldwide as “Dragonstone” in Game of Thrones, it is the most dramatic spot on the Biscay coast.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_natural">Natural wonder</span><span class="chip" data-i18n="tag_heritage">Heritage</span></div>
           <div class="credit">Photo: Clementp.fr · <a href="https://commons.wikimedia.org/wiki/File%3AGaztelugatxe_en_espagne.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/mundaka.jpg" alt="Mundaka" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>Mundaka</h3>
-          <div class="alt">Mundaka</div>
-          <p>A picture-postcard fishing village at the mouth of the Urdaibai estuary, home to one of Europe&#x27;s most famous left-hand waves. Whitewashed houses and the little Santa Catalina chapel overlook the water.</p>
-          <div class="chips"><span class="chip">Coast</span><span class="chip">Surf</span></div>
+          <h3 data-i18n="loc_mundaka_name">Mundaka</h3>
+          <div class="alt" data-i18n="loc_mundaka_alt">Mundaka</div>
+          <p data-i18n="loc_mundaka_desc">A picture-postcard fishing village at the mouth of the Urdaibai estuary, home to one of Europe&#x27;s most famous left-hand waves. Whitewashed houses and the little Santa Catalina chapel overlook the water.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_coast">Coast</span><span class="chip" data-i18n="tag_surf">Surf</span></div>
           <div class="credit">Photo: Mikel Arrazola · <a href="https://commons.wikimedia.org/wiki/File%3AMundaka%2C_Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY 3.0 es</a></div>
         </div>
       </article>
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/guernica.jpg" alt="Gernika" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>Gernika</h3>
-          <div class="alt">Guernica</div>
-          <p>The town immortalised by Picasso&#x27;s Guernica after its bombing in 1937. Its Assembly House and the symbolic Tree of Gernika remain the beating heart of Basque self-government and identity.</p>
-          <div class="chips"><span class="chip">History</span><span class="chip">Heritage</span></div>
+          <h3 data-i18n="loc_guernica_name">Gernika</h3>
+          <div class="alt" data-i18n="loc_guernica_alt">Guernica</div>
+          <p data-i18n="loc_guernica_desc">The town immortalised by Picasso&#x27;s Guernica after its bombing in 1937. Its Assembly House and the symbolic Tree of Gernika remain the beating heart of Basque self-government and identity.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_history">History</span><span class="chip" data-i18n="tag_heritage">Heritage</span></div>
           <div class="credit">Photo: Papamanila · <a href="https://commons.wikimedia.org/wiki/File%3AArbol_de_Gernika_d%C3%ADa.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/vizcaya-bridge.jpg" alt="Vizcaya Bridge" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>Vizcaya Bridge</h3>
-          <div class="alt">Bizkaiko Zubia</div>
-          <p>The world&#x27;s oldest transporter bridge (1893) and a UNESCO World Heritage Site. It ferries cars and passengers across the Nervión estuary in a suspended gondola — a graceful feat of industrial-age engineering.</p>
-          <div class="chips"><span class="chip">UNESCO</span><span class="chip">Engineering</span></div>
+          <h3 data-i18n="loc_vizcaya-bridge_name">Vizcaya Bridge</h3>
+          <div class="alt" data-i18n="loc_vizcaya-bridge_alt">Bizkaiko Zubia</div>
+          <p data-i18n="loc_vizcaya-bridge_desc">The world&#x27;s oldest transporter bridge (1893) and a UNESCO World Heritage Site. It ferries cars and passengers across the Nervión estuary in a suspended gondola — a graceful feat of industrial-age engineering.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_unesco">UNESCO</span><span class="chip" data-i18n="tag_engineering">Engineering</span></div>
           <div class="credit">Photo: Javier Mediavilla Ezquibela
 
 
@@ -225,195 +225,195 @@ Javier Mediavilla Ezquibela, author of the  picture · <a href="https://commons.
       <article class="loc" data-region="Bizkaia">
         <div class="loc-img">
           <img src="images/urdaibai.jpg" alt="Urdaibai Biosphere Reserve" loading="lazy" />
-          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+          <span class="region-badge" style="--rc:#c8102e" data-i18n="region_Bizkaia">Bizkaia</span>
         </div>
         <div class="loc-body">
-          <h3>Urdaibai Biosphere Reserve</h3>
-          <div class="alt">Urdaibai</div>
-          <p>A UNESCO Biosphere Reserve where river, marsh and Atlantic coast meet. Its estuary and cliffs shelter rich birdlife and link the beaches, the villages of Mundaka and Bermeo, and the ancient cave of Santimamiñe.</p>
-          <div class="chips"><span class="chip">Nature</span><span class="chip">UNESCO</span></div>
+          <h3 data-i18n="loc_urdaibai_name">Urdaibai Biosphere Reserve</h3>
+          <div class="alt" data-i18n="loc_urdaibai_alt">Urdaibai</div>
+          <p data-i18n="loc_urdaibai_desc">A UNESCO Biosphere Reserve where river, marsh and Atlantic coast meet. Its estuary and cliffs shelter rich birdlife and link the beaches, the villages of Mundaka and Bermeo, and the ancient cave of Santimamiñe.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_nature">Nature</span><span class="chip" data-i18n="tag_unesco">UNESCO</span></div>
           <div class="credit">Photo: Eltito · <a href="https://commons.wikimedia.org/wiki/File%3AMundaka.jpg" target="_blank" rel="noopener">CC BY 2.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Gipuzkoa">
         <div class="loc-img">
           <img src="images/san-sebastian.jpg" alt="San Sebastián" loading="lazy" />
-          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+          <span class="region-badge" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</span>
         </div>
         <div class="loc-body">
-          <h3>San Sebastián</h3>
-          <div class="alt">Donostia</div>
-          <p>A belle-époque seaside jewel, famed for the perfect shell-shaped La Concha bay and one of the highest concentrations of Michelin stars on Earth. Elegant boulevards, pintxos bars and Mount Igueldo frame the view.</p>
-          <div class="chips"><span class="chip">City</span><span class="chip">Food</span></div>
+          <h3 data-i18n="loc_san-sebastian_name">San Sebastián</h3>
+          <div class="alt" data-i18n="loc_san-sebastian_alt">Donostia</div>
+          <p data-i18n="loc_san-sebastian_desc">A belle-époque seaside jewel, famed for the perfect shell-shaped La Concha bay and one of the highest concentrations of Michelin stars on Earth. Elegant boulevards, pintxos bars and Mount Igueldo frame the view.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_city">City</span><span class="chip" data-i18n="tag_food">Food</span></div>
           <div class="credit">Photo: Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3ASan_Sebasti%C3%A1n_-_Ayuntamiento_10.jpg" target="_blank" rel="noopener">CC0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Gipuzkoa">
         <div class="loc-img">
           <img src="images/zumaia-flysch.jpg" alt="Zumaia Flysch" loading="lazy" />
-          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+          <span class="region-badge" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</span>
         </div>
         <div class="loc-body">
-          <h3>Zumaia Flysch</h3>
-          <div class="alt">Zumaia</div>
-          <p>Layered rock formations that read like the pages of a giant book, recording 60 million years of Earth&#x27;s history. The cliffs of Itzurun beach are a pilgrimage site for geologists and photographers alike.</p>
-          <div class="chips"><span class="chip">Natural wonder</span><span class="chip">Geology</span></div>
+          <h3 data-i18n="loc_zumaia-flysch_name">Zumaia Flysch</h3>
+          <div class="alt" data-i18n="loc_zumaia-flysch_alt">Zumaia</div>
+          <p data-i18n="loc_zumaia-flysch_desc">Layered rock formations that read like the pages of a giant book, recording 60 million years of Earth&#x27;s history. The cliffs of Itzurun beach are a pilgrimage site for geologists and photographers alike.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_natural">Natural wonder</span><span class="chip" data-i18n="tag_geology">Geology</span></div>
           <div class="credit">Photo: https://www.flickr.com/people/frescotours/ · <a href="https://commons.wikimedia.org/wiki/File%3AZumaiaren_ikuspegi_orokorra.jpg" target="_blank" rel="noopener">CC BY 2.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Gipuzkoa">
         <div class="loc-img">
           <img src="images/hondarribia.jpg" alt="Hondarribia" loading="lazy" />
-          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+          <span class="region-badge" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</span>
         </div>
         <div class="loc-body">
-          <h3>Hondarribia</h3>
-          <div class="alt">Hondarribia</div>
-          <p>A fortified border town opposite Hendaye, with a walled medieval centre, a castle that is now a parador, and a colourful fishermen&#x27;s quarter right on the estuary.</p>
-          <div class="chips"><span class="chip">Town</span><span class="chip">Coast</span></div>
+          <h3 data-i18n="loc_hondarribia_name">Hondarribia</h3>
+          <div class="alt" data-i18n="loc_hondarribia_alt">Hondarribia</div>
+          <p data-i18n="loc_hondarribia_desc">A fortified border town opposite Hendaye, with a walled medieval centre, a castle that is now a parador, and a colourful fishermen&#x27;s quarter right on the estuary.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_town">Town</span><span class="chip" data-i18n="tag_coast">Coast</span></div>
           <div class="credit">Photo: JLPC · <a href="https://commons.wikimedia.org/wiki/File%3AFontarrabie_depuis_Hendaye_2012.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Gipuzkoa">
         <div class="loc-img">
           <img src="images/onati.jpg" alt="Oñati" loading="lazy" />
-          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+          <span class="region-badge" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</span>
         </div>
         <div class="loc-body">
-          <h3>Oñati</h3>
-          <div class="alt">Oñate</div>
-          <p>Home to the oldest university in the Basque Country (1540). Its arcaded main square and Renaissance college make it one of the region&#x27;s finest historic towns — and a gateway to the mountains of Arantzazu.</p>
-          <div class="chips"><span class="chip">Heritage</span><span class="chip">Town</span></div>
+          <h3 data-i18n="loc_onati_name">Oñati</h3>
+          <div class="alt" data-i18n="loc_onati_alt">Oñate</div>
+          <p data-i18n="loc_onati_desc">Home to the oldest university in the Basque Country (1540). Its arcaded main square and Renaissance college make it one of the region&#x27;s finest historic towns — and a gateway to the mountains of Arantzazu.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_heritage">Heritage</span><span class="chip" data-i18n="tag_town">Town</span></div>
           <div class="credit">Photo: Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3AO%C3%B1ate_1.jpg" target="_blank" rel="noopener">CC0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Gipuzkoa">
         <div class="loc-img">
           <img src="images/arantzazu.jpg" alt="Sanctuary of Arantzazu" loading="lazy" />
-          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+          <span class="region-badge" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</span>
         </div>
         <div class="loc-body">
-          <h3>Sanctuary of Arantzazu</h3>
-          <div class="alt">Arantzazuko santutegia</div>
-          <p>A bold modern basilica set deep in the Aizkorri mountains, adorned with monumental sculptures by Jorge Oteiza and work by Eduardo Chillida. A spiritual and artistic landmark of the Basque cultural revival.</p>
-          <div class="chips"><span class="chip">Heritage</span><span class="chip">Art</span></div>
+          <h3 data-i18n="loc_arantzazu_name">Sanctuary of Arantzazu</h3>
+          <div class="alt" data-i18n="loc_arantzazu_alt">Arantzazuko santutegia</div>
+          <p data-i18n="loc_arantzazu_desc">A bold modern basilica set deep in the Aizkorri mountains, adorned with monumental sculptures by Jorge Oteiza and work by Eduardo Chillida. A spiritual and artistic landmark of the Basque cultural revival.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_heritage">Heritage</span><span class="chip" data-i18n="tag_art">Art</span></div>
           <div class="credit">Photo: Keta · <a href="https://commons.wikimedia.org/wiki/File%3AArantzazuko_santutegiko_ikuspegia.jpg" target="_blank" rel="noopener">CC BY-SA 2.5</a></div>
         </div>
       </article>
       <article class="loc" data-region="Gipuzkoa">
         <div class="loc-img">
           <img src="images/loyola.jpg" alt="Sanctuary of Loyola" loading="lazy" />
-          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+          <span class="region-badge" style="--rc:#0b7a3b" data-i18n="region_Gipuzkoa">Gipuzkoa</span>
         </div>
         <div class="loc-body">
-          <h3>Sanctuary of Loyola</h3>
-          <div class="alt">Loiolako santutegia</div>
-          <p>The birthplace of St. Ignatius of Loyola, founder of the Jesuits. The monumental baroque sanctuary, crowned by an immense gilded dome, is one of the grandest religious complexes in Spain.</p>
-          <div class="chips"><span class="chip">Heritage</span><span class="chip">Spiritual</span></div>
+          <h3 data-i18n="loc_loyola_name">Sanctuary of Loyola</h3>
+          <div class="alt" data-i18n="loc_loyola_alt">Loiolako santutegia</div>
+          <p data-i18n="loc_loyola_desc">The birthplace of St. Ignatius of Loyola, founder of the Jesuits. The monumental baroque sanctuary, crowned by an immense gilded dome, is one of the grandest religious complexes in Spain.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_heritage">Heritage</span><span class="chip" data-i18n="tag_spiritual">Spiritual</span></div>
           <div class="credit">Photo: Theklan · <a href="https://commons.wikimedia.org/wiki/File%3ABasilica_of_St._Ignatius_in_Loyola_%28contrasted%29.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Araba">
         <div class="loc-img">
           <img src="images/vitoria-gasteiz.jpg" alt="Vitoria-Gasteiz" loading="lazy" />
-          <span class="region-badge" style="--rc:#b06a00">Araba</span>
+          <span class="region-badge" style="--rc:#b06a00" data-i18n="region_Araba">Araba</span>
         </div>
         <div class="loc-body">
-          <h3>Vitoria-Gasteiz</h3>
-          <div class="alt">Gasteiz</div>
-          <p>The Basque Country&#x27;s capital and a European pioneer of green urban living. Its medieval, almond-shaped old town and the Plaza de la Virgen Blanca sit beside a celebrated “green ring” of parks.</p>
-          <div class="chips"><span class="chip">City</span><span class="chip">Green</span></div>
+          <h3 data-i18n="loc_vitoria-gasteiz_name">Vitoria-Gasteiz</h3>
+          <div class="alt" data-i18n="loc_vitoria-gasteiz_alt">Gasteiz</div>
+          <p data-i18n="loc_vitoria-gasteiz_desc">The Basque Country&#x27;s capital and a European pioneer of green urban living. Its medieval, almond-shaped old town and the Plaza de la Virgen Blanca sit beside a celebrated “green ring” of parks.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_city">City</span><span class="chip" data-i18n="tag_green">Green</span></div>
           <div class="credit">Photo: Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3AVitoria_-_Plaza_de_la_Virgen_Blanca%2C_Escultura_vegetal_Vitoria_Gasteiz_%21.jpg" target="_blank" rel="noopener">CC0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Araba">
         <div class="loc-img">
           <img src="images/laguardia.jpg" alt="Laguardia" loading="lazy" />
-          <span class="region-badge" style="--rc:#b06a00">Araba</span>
+          <span class="region-badge" style="--rc:#b06a00" data-i18n="region_Araba">Araba</span>
         </div>
         <div class="loc-body">
-          <h3>Laguardia</h3>
-          <div class="alt">Guardia</div>
-          <p>A hilltop medieval town ringed by walls in the heart of the Rioja Alavesa wine country. Its bodegas, cobbled lanes and vineyard views make it the capital of Basque wine tourism.</p>
-          <div class="chips"><span class="chip">Wine country</span><span class="chip">Heritage</span></div>
+          <h3 data-i18n="loc_laguardia_name">Laguardia</h3>
+          <div class="alt" data-i18n="loc_laguardia_alt">Guardia</div>
+          <p data-i18n="loc_laguardia_desc">A hilltop medieval town ringed by walls in the heart of the Rioja Alavesa wine country. Its bodegas, cobbled lanes and vineyard views make it the capital of Basque wine tourism.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_wine">Wine country</span><span class="chip" data-i18n="tag_heritage">Heritage</span></div>
           <div class="credit">Photo: Mikel Arrazola · <a href="https://commons.wikimedia.org/wiki/File%3AGuardia_airetik2.jpg" target="_blank" rel="noopener">CC BY 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Araba">
         <div class="loc-img">
           <img src="images/anana.jpg" alt="Salinas de Añana" loading="lazy" />
-          <span class="region-badge" style="--rc:#b06a00">Araba</span>
+          <span class="region-badge" style="--rc:#b06a00" data-i18n="region_Araba">Araba</span>
         </div>
         <div class="loc-body">
-          <h3>Salinas de Añana</h3>
-          <div class="alt">Añanako Gatz Harana</div>
-          <p>A rare inland salt valley with thousands of wooden evaporation terraces, worked since Roman times. This extraordinary, UNESCO-recognised landscape is one of the oldest salt-production sites in Europe.</p>
-          <div class="chips"><span class="chip">UNESCO</span><span class="chip">Heritage</span></div>
+          <h3 data-i18n="loc_anana_name">Salinas de Añana</h3>
+          <div class="alt" data-i18n="loc_anana_alt">Añanako Gatz Harana</div>
+          <p data-i18n="loc_anana_desc">A rare inland salt valley with thousands of wooden evaporation terraces, worked since Roman times. This extraordinary, UNESCO-recognised landscape is one of the oldest salt-production sites in Europe.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_unesco">UNESCO</span><span class="chip" data-i18n="tag_heritage">Heritage</span></div>
           <div class="credit">Photo: Basotxerri · <a href="https://commons.wikimedia.org/wiki/File%3ASalinas_de_A%C3%B1ana_-_Pueblo_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Navarre">
         <div class="loc-img">
           <img src="images/pamplona.jpg" alt="Pamplona" loading="lazy" />
-          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+          <span class="region-badge" style="--rc:#6a2c8f" data-i18n="region_Navarre">Navarre</span>
         </div>
         <div class="loc-body">
-          <h3>Pamplona</h3>
-          <div class="alt">Iruñea</div>
-          <p>Capital of Navarre and famous the world over for San Fermín, when runners sprint ahead of bulls through the streets. Its Gothic cathedral, star-shaped citadel and pintxos scene reward visitors all year round.</p>
-          <div class="chips"><span class="chip">City</span><span class="chip">Festival</span></div>
+          <h3 data-i18n="loc_pamplona_name">Pamplona</h3>
+          <div class="alt" data-i18n="loc_pamplona_alt">Iruñea</div>
+          <p data-i18n="loc_pamplona_desc">Capital of Navarre and famous the world over for San Fermín, when runners sprint ahead of bulls through the streets. Its Gothic cathedral, star-shaped citadel and pintxos scene reward visitors all year round.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_city">City</span><span class="chip" data-i18n="tag_festival">Festival</span></div>
           <div class="credit">Photo: José Luis Filpo Cabana · <a href="https://commons.wikimedia.org/wiki/File%3AMonumento_a_los_Fueros_%28Pamplona%29.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Navarre">
         <div class="loc-img">
           <img src="images/roncesvalles.jpg" alt="Roncesvalles" loading="lazy" />
-          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+          <span class="region-badge" style="--rc:#6a2c8f" data-i18n="region_Navarre">Navarre</span>
         </div>
         <div class="loc-body">
-          <h3>Roncesvalles</h3>
-          <div class="alt">Orreaga</div>
-          <p>A legendary pass on the Camino de Santiago, where Roland&#x27;s epic battle was fought. Its Gothic collegiate church and monastery have welcomed weary pilgrims for a thousand years.</p>
-          <div class="chips"><span class="chip">Heritage</span><span class="chip">Camino</span></div>
+          <h3 data-i18n="loc_roncesvalles_name">Roncesvalles</h3>
+          <div class="alt" data-i18n="loc_roncesvalles_alt">Orreaga</div>
+          <p data-i18n="loc_roncesvalles_desc">A legendary pass on the Camino de Santiago, where Roland&#x27;s epic battle was fought. Its Gothic collegiate church and monastery have welcomed weary pilgrims for a thousand years.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_heritage">Heritage</span><span class="chip" data-i18n="tag_camino">Camino</span></div>
           <div class="credit">Photo: Hayden Soloviev · <a href="https://commons.wikimedia.org/wiki/File%3AColegiata_de_Santa_Mar%C3%ADa_de_Roncesvalles_%28Collegiate_Church_of_Roncesvalles%29%2C_Navarre%2C_Spain.jpg" target="_blank" rel="noopener">CC BY 4.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Navarre">
         <div class="loc-img">
           <img src="images/ujue.jpg" alt="Ujué" loading="lazy" />
-          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+          <span class="region-badge" style="--rc:#6a2c8f" data-i18n="region_Navarre">Navarre</span>
         </div>
         <div class="loc-body">
-          <h3>Ujué</h3>
-          <div class="alt">Uxue</div>
-          <p>A tiny hilltop village crowned by a fortified Romanesque church, offering sweeping views across Navarre. Its honey-coloured lanes feel frozen in the Middle Ages.</p>
-          <div class="chips"><span class="chip">Village</span><span class="chip">Heritage</span></div>
+          <h3 data-i18n="loc_ujue_name">Ujué</h3>
+          <div class="alt" data-i18n="loc_ujue_alt">Uxue</div>
+          <p data-i18n="loc_ujue_desc">A tiny hilltop village crowned by a fortified Romanesque church, offering sweeping views across Navarre. Its honey-coloured lanes feel frozen in the Middle Ages.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_village">Village</span><span class="chip" data-i18n="tag_heritage">Heritage</span></div>
           <div class="credit">Photo: Adbar · <a href="https://commons.wikimedia.org/wiki/File%3AUju%C3%A9.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Navarre">
         <div class="loc-img">
           <img src="images/zugarramurdi.jpg" alt="Zugarramurdi" loading="lazy" />
-          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+          <span class="region-badge" style="--rc:#6a2c8f" data-i18n="region_Navarre">Navarre</span>
         </div>
         <div class="loc-body">
-          <h3>Zugarramurdi</h3>
-          <div class="alt">Zugarramurdi</div>
-          <p>A village of legend whose caves hosted the “witches of Zugarramurdi,” tried by the Inquisition in 1610. The vast limestone cavern and its museum tell one of Europe&#x27;s most famous witchcraft stories.</p>
-          <div class="chips"><span class="chip">Legend</span><span class="chip">Nature</span></div>
+          <h3 data-i18n="loc_zugarramurdi_name">Zugarramurdi</h3>
+          <div class="alt" data-i18n="loc_zugarramurdi_alt">Zugarramurdi</div>
+          <p data-i18n="loc_zugarramurdi_desc">A village of legend whose caves hosted the “witches of Zugarramurdi,” tried by the Inquisition in 1610. The vast limestone cavern and its museum tell one of Europe&#x27;s most famous witchcraft stories.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_legend">Legend</span><span class="chip" data-i18n="tag_nature">Nature</span></div>
           <div class="credit">Photo: GaÃ«l Chardon · <a href="https://commons.wikimedia.org/wiki/File%3AZugarramurdi._Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Iparralde">
         <div class="loc-img">
           <img src="images/biarritz.jpg" alt="Biarritz" loading="lazy" />
-          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+          <span class="region-badge" style="--rc:#1c6ea4" data-i18n="region_Iparralde">Iparralde</span>
         </div>
         <div class="loc-body">
-          <h3>Biarritz</h3>
-          <div class="alt">Miarritze</div>
-          <p>The glamorous queen of the French Basque coast, once a favourite of Empress Eugénie and European royalty. Surf culture, a grand casino and the Rocher de la Vierge meet belle-époque elegance.</p>
-          <div class="chips"><span class="chip">Coast</span><span class="chip">City</span></div>
+          <h3 data-i18n="loc_biarritz_name">Biarritz</h3>
+          <div class="alt" data-i18n="loc_biarritz_alt">Miarritze</div>
+          <p data-i18n="loc_biarritz_desc">The glamorous queen of the French Basque coast, once a favourite of Empress Eugénie and European royalty. Surf culture, a grand casino and the Rocher de la Vierge meet belle-époque elegance.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_coast">Coast</span><span class="chip" data-i18n="tag_city">City</span></div>
           <div class="credit">Photo: Nicolas G. Mertens. This picture is not in the public domain. If you want to use this picture outside of Wikipedia, please read the Licensing section just below. In particular, &quot;You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&quot;
 
 Esta imagen no es de dominio público. Si desea utilizar esta imagen fuera de Wikipedia, lea la sección Licencias justo debajo. En particular, &quot;Debe dar el crédito apropiado, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de ninguna manera que sugiera que el licenciante lo respalda a usted o su uso.&quot; · <a href="https://commons.wikimedia.org/wiki/File%3ABiarritz%E2%80%94View_from_Esplanade_Elisabeth_II.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
@@ -422,39 +422,39 @@ Esta imagen no es de dominio público. Si desea utilizar esta imagen fuera de Wi
       <article class="loc" data-region="Iparralde">
         <div class="loc-img">
           <img src="images/bayonne.jpg" alt="Bayonne" loading="lazy" />
-          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+          <span class="region-badge" style="--rc:#1c6ea4" data-i18n="region_Iparralde">Iparralde</span>
         </div>
         <div class="loc-body">
-          <h3>Bayonne</h3>
-          <div class="alt">Baiona</div>
-          <p>A cultured river port known for its Gothic cathedral, half-timbered houses and, above all, its chocolate. Bayonne gave France its chocolate trade and remains a gourmet capital of the north.</p>
-          <div class="chips"><span class="chip">City</span><span class="chip">Food</span></div>
+          <h3 data-i18n="loc_bayonne_name">Bayonne</h3>
+          <div class="alt" data-i18n="loc_bayonne_alt">Baiona</div>
+          <p data-i18n="loc_bayonne_desc">A cultured river port known for its Gothic cathedral, half-timbered houses and, above all, its chocolate. Bayonne gave France its chocolate trade and remains a gourmet capital of the north.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_city">City</span><span class="chip" data-i18n="tag_food">Food</span></div>
           <div class="credit">Photo: Daniel VILLAFRUELA · <a href="https://commons.wikimedia.org/wiki/File%3ABayonne-Centre_historique-20130811.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Iparralde">
         <div class="loc-img">
           <img src="images/saint-jean-de-luz.jpg" alt="Saint-Jean-de-Luz" loading="lazy" />
-          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+          <span class="region-badge" style="--rc:#1c6ea4" data-i18n="region_Iparralde">Iparralde</span>
         </div>
         <div class="loc-body">
-          <h3>Saint-Jean-de-Luz</h3>
-          <div class="alt">Donibane Lohizune</div>
-          <p>A sheltered fishing port and royal wedding town, where Louis XIV married María Teresa in 1660. A crescent bay, colourful Basque houses and a lively old harbour make it irresistible.</p>
-          <div class="chips"><span class="chip">Coast</span><span class="chip">Town</span></div>
+          <h3 data-i18n="loc_saint-jean-de-luz_name">Saint-Jean-de-Luz</h3>
+          <div class="alt" data-i18n="loc_saint-jean-de-luz_alt">Donibane Lohizune</div>
+          <p data-i18n="loc_saint-jean-de-luz_desc">A sheltered fishing port and royal wedding town, where Louis XIV married María Teresa in 1660. A crescent bay, colourful Basque houses and a lively old harbour make it irresistible.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_coast">Coast</span><span class="chip" data-i18n="tag_town">Town</span></div>
           <div class="credit">Photo: Unknown · <a href="https://commons.wikimedia.org/wiki/File%3AFrance-Saint-Jean-de-Luz-2005-08-05.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
         </div>
       </article>
       <article class="loc" data-region="Iparralde">
         <div class="loc-img">
           <img src="images/la-rhune.jpg" alt="La Rhune" loading="lazy" />
-          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+          <span class="region-badge" style="--rc:#1c6ea4" data-i18n="region_Iparralde">Iparralde</span>
         </div>
         <div class="loc-body">
-          <h3>La Rhune</h3>
-          <div class="alt">Larrun</div>
-          <p>The western Pyrenees&#x27; signature peak (905 m), climbed by a charming 1924 rack railway. Panoramic views sweep across the coast, the mountains and both sides of the French–Spanish border.</p>
-          <div class="chips"><span class="chip">Mountain</span><span class="chip">Nature</span></div>
+          <h3 data-i18n="loc_la-rhune_name">La Rhune</h3>
+          <div class="alt" data-i18n="loc_la-rhune_alt">Larrun</div>
+          <p data-i18n="loc_la-rhune_desc">The western Pyrenees&#x27; signature peak (905 m), climbed by a charming 1924 rack railway. Panoramic views sweep across the coast, the mountains and both sides of the French–Spanish border.</p>
+          <div class="chips"><span class="chip" data-i18n="tag_mountain">Mountain</span><span class="chip" data-i18n="tag_nature">Nature</span></div>
           <div class="credit">Photo: Basotxerri · <a href="https://commons.wikimedia.org/wiki/File%3ALarrun_-BT-_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
         </div>
       </article>
@@ -463,7 +463,7 @@ Esta imagen no es de dominio público. Si desea utilizar esta imagen fuera de Wi
 
 <div class="wrap" id="credits">
   <details class="credits">
-    <summary>Image credits &amp; licences (© their respective authors, via Wikimedia Commons)</summary>
+    <summary data-i18n="credits_summary">Image credits &amp; licences (© their respective authors, via Wikimedia Commons)</summary>
     <ul><li>Tommie Hansen, Ardfern, Tomas Fano, 0Igor González Martín, Jesús Ignacio Bravo Soler, Pedro J Pacheco, Irekia/Gobierno Vasco, Euskaldunaa, Basotxerri, Eric Fischer, Tiia Monto, pictures Jettcom y Zarateman — <a href="https://commons.wikimedia.org/wiki/File%3ACollage_de_Bilbao%2C_Pa%C3%ADs_Vasco%2C_Espa%C3%B1a.png" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Naotake Murayama — <a href="https://commons.wikimedia.org/wiki/File%3AMuseo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg" target="_blank" rel="noopener">CC BY 2.0</a></li><li>Clementp.fr — <a href="https://commons.wikimedia.org/wiki/File%3AGaztelugatxe_en_espagne.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Mikel Arrazola — <a href="https://commons.wikimedia.org/wiki/File%3AMundaka%2C_Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY 3.0 es</a></li><li>Papamanila — <a href="https://commons.wikimedia.org/wiki/File%3AArbol_de_Gernika_d%C3%ADa.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Javier Mediavilla Ezquibela
 
 
@@ -476,16 +476,42 @@ Javier Mediavilla Ezquibela, author of the  picture — <a href="https://commons
 
 Esta imagen no es de dominio público. Si desea utilizar esta imagen fuera de Wikipedia, lea la sección Licencias justo debajo. En particular, &quot;Debe dar el crédito apropiado, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de ninguna manera que sugiera que el licenciante lo respalda a usted o su uso.&quot; — <a href="https://commons.wikimedia.org/wiki/File%3ABiarritz%E2%80%94View_from_Esplanade_Elisabeth_II.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Daniel VILLAFRUELA — <a href="https://commons.wikimedia.org/wiki/File%3ABayonne-Centre_historique-20130811.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Unknown — <a href="https://commons.wikimedia.org/wiki/File%3AFrance-Saint-Jean-de-Luz-2005-08-05.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Basotxerri — <a href="https://commons.wikimedia.org/wiki/File%3ALarrun_-BT-_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Eltito — <a href="https://commons.wikimedia.org/wiki/File%3AMundaka.jpg" target="_blank" rel="noopener">CC BY 2.0</a></li></ul>
   </details>
-  <footer>A fan-made, informational guide to the iconic locations of the Basque Country / Euskal Herria. Descriptions are provided in good faith; photographs are credited to their authors under their respective licences.</footer>
+  <footer data-i18n="footer">A fan-made, informational guide to the iconic locations of the Basque Country / Euskal Herria. Descriptions are provided in good faith; photographs are credited to their authors under their respective licences.</footer>
 </div>
 
 <script>
-  var btns=document.querySelectorAll('.filter'),cards=document.querySelectorAll('.loc');
-  btns.forEach(function(b){b.addEventListener('click',function(){
-    btns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
+  var I18N = {"en": {"title": "Iconic Locations of the Basque Country — Euskal Herria", "nav_about": "About", "nav_places": "Locations", "nav_credits": "Credits", "hero_title": "The Basque Country", "hero_sub": "Iconic locations of a land between the mountains and the sea", "hero_lead": "Twenty-four remarkable places across Bizkaia, Gipuzkoa, Araba, Navarre and Iparralde — from Frank Gehry's titanium museum and dragon-stone staircases to painted flysch cliffs, salt valleys and witch-caves.", "cta1": "Explore the Locations", "cta2": "About the Region", "about_tag": "The Region", "about_h2": "A country of seven provinces", "about_p1": "The Basque Country — <em>Euskal Herria</em>, “the land of the Basque speakers” — straddles the western Pyrenees where Spain meets France. It is home to the Basques, one of Europe's oldest peoples, with a language, <em>Euskara</em>, that is a mystery to linguists: a living isolate unrelated to any other tongue on Earth.", "about_p2": "Historically it counts seven provinces: <strong>Bizkaia</strong>, <strong>Gipuzkoa</strong>, <strong>Araba</strong> and <strong>Navarre</strong> in Spain, and <strong>Lapurdi</strong>, <strong>Zuberoa</strong> and <strong>Behe Nafarroa</strong> (together <em>Iparralde</em>) in France. The landscape runs from wild Atlantic surf beaches and fishing villages to green mountain valleys, vineyards and three of the country's great modern museums.", "about_p3": "Its people are fiercely proud of their identity — expressed in the red, green and white <em>Ikurriña</em> flag, the swirling <em>lauburu</em> symbol, the sport of <em>pelota</em>, and a culinary culture that has made San Sebastián one of the greatest places to eat on the planet.", "caption": "The flysch cliffs of Zumaia — 60 million years of Earth history, on the Gipuzkoa coast.", "places_tag": "The Locations", "places_h2": "Places worth crossing the world for", "places_sub": "Filter by province or region. Colours match the badges on each place.", "all": "All", "credits_summary": "Image credits &amp; licences (© their respective authors, via Wikimedia Commons)", "footer": "A fan-made, informational guide to the iconic locations of the Basque Country / Euskal Herria. Descriptions are provided in good faith; photographs are credited to their authors under their respective licences.", "fact_0_k": "7", "fact_0_l": "Traditional provinces", "fact_1_k": "Euskara", "fact_1_l": "Europe's oldest language isolate", "fact_2_k": "3", "fact_2_l": "UNESCO listings featured here", "fact_3_k": "1", "fact_3_l": "World-famous left-hand wave (Mundaka)", "fact_4_k": "≈ 3M", "fact_4_l": "Basque speakers &amp; residents", "fact_5_k": "Bay of Biscay", "fact_5_l": "Wild Atlantic coastline", "loc_bilbao_name": "Bilbao", "loc_bilbao_alt": "Bilbo", "loc_bilbao_desc": "The largest city in the Basque Country and its cultural engine. Once a gritty industrial port, Bilbao reinvented itself as a capital of design and art, with a walkable Casco Viejo, a celebrated food scene and riverside promenades that draw you toward the Guggenheim.", "loc_guggenheim_name": "Guggenheim Museum Bilbao", "loc_guggenheim_alt": "Guggenheim Bilbao Museoa", "loc_guggenheim_desc": "Frank Gehry's titanium masterpiece, opened in 1997, turned a fading shipbuilding city into a global destination. Its shimmering, ship-like curves — guarded by Jeff Koons's giant “Puppy” — are the emblem of Bilbao's rebirth.", "loc_gaztelugatxe_name": "San Juan de Gaztelugatxe", "loc_gaztelugatxe_alt": "Gaztelugatxe", "loc_gaztelugatxe_desc": "A stone hermitage perched on a tiny islet, reached by a winding stone bridge and 241 steps. Famous worldwide as “Dragonstone” in Game of Thrones, it is the most dramatic spot on the Biscay coast.", "loc_mundaka_name": "Mundaka", "loc_mundaka_alt": "Mundaka", "loc_mundaka_desc": "A picture-postcard fishing village at the mouth of the Urdaibai estuary, home to one of Europe's most famous left-hand waves. Whitewashed houses and the little Santa Catalina chapel overlook the water.", "loc_guernica_name": "Gernika", "loc_guernica_alt": "Guernica", "loc_guernica_desc": "The town immortalised by Picasso's Guernica after its bombing in 1937. Its Assembly House and the symbolic Tree of Gernika remain the beating heart of Basque self-government and identity.", "loc_vizcaya-bridge_name": "Vizcaya Bridge", "loc_vizcaya-bridge_alt": "Bizkaiko Zubia", "loc_vizcaya-bridge_desc": "The world's oldest transporter bridge (1893) and a UNESCO World Heritage Site. It ferries cars and passengers across the Nervión estuary in a suspended gondola — a graceful feat of industrial-age engineering.", "loc_urdaibai_name": "Urdaibai Biosphere Reserve", "loc_urdaibai_alt": "Urdaibai", "loc_urdaibai_desc": "A UNESCO Biosphere Reserve where river, marsh and Atlantic coast meet. Its estuary and cliffs shelter rich birdlife and link the beaches, the villages of Mundaka and Bermeo, and the ancient cave of Santimamiñe.", "loc_san-sebastian_name": "San Sebastián", "loc_san-sebastian_alt": "Donostia", "loc_san-sebastian_desc": "A belle-époque seaside jewel, famed for the perfect shell-shaped La Concha bay and one of the highest concentrations of Michelin stars on Earth. Elegant boulevards, pintxos bars and Mount Igueldo frame the view.", "loc_zumaia-flysch_name": "Zumaia Flysch", "loc_zumaia-flysch_alt": "Zumaia", "loc_zumaia-flysch_desc": "Layered rock formations that read like the pages of a giant book, recording 60 million years of Earth's history. The cliffs of Itzurun beach are a pilgrimage site for geologists and photographers alike.", "loc_hondarribia_name": "Hondarribia", "loc_hondarribia_alt": "Hondarribia", "loc_hondarribia_desc": "A fortified border town opposite Hendaye, with a walled medieval centre, a castle that is now a parador, and a colourful fishermen's quarter right on the estuary.", "loc_onati_name": "Oñati", "loc_onati_alt": "Oñate", "loc_onati_desc": "Home to the oldest university in the Basque Country (1540). Its arcaded main square and Renaissance college make it one of the region's finest historic towns — and a gateway to the mountains of Arantzazu.", "loc_arantzazu_name": "Sanctuary of Arantzazu", "loc_arantzazu_alt": "Arantzazuko santutegia", "loc_arantzazu_desc": "A bold modern basilica set deep in the Aizkorri mountains, adorned with monumental sculptures by Jorge Oteiza and work by Eduardo Chillida. A spiritual and artistic landmark of the Basque cultural revival.", "loc_loyola_name": "Sanctuary of Loyola", "loc_loyola_alt": "Loiolako santutegia", "loc_loyola_desc": "The birthplace of St. Ignatius of Loyola, founder of the Jesuits. The monumental baroque sanctuary, crowned by an immense gilded dome, is one of the grandest religious complexes in Spain.", "loc_vitoria-gasteiz_name": "Vitoria-Gasteiz", "loc_vitoria-gasteiz_alt": "Gasteiz", "loc_vitoria-gasteiz_desc": "The Basque Country's capital and a European pioneer of green urban living. Its medieval, almond-shaped old town and the Plaza de la Virgen Blanca sit beside a celebrated “green ring” of parks.", "loc_laguardia_name": "Laguardia", "loc_laguardia_alt": "Guardia", "loc_laguardia_desc": "A hilltop medieval town ringed by walls in the heart of the Rioja Alavesa wine country. Its bodegas, cobbled lanes and vineyard views make it the capital of Basque wine tourism.", "loc_anana_name": "Salinas de Añana", "loc_anana_alt": "Añanako Gatz Harana", "loc_anana_desc": "A rare inland salt valley with thousands of wooden evaporation terraces, worked since Roman times. This extraordinary, UNESCO-recognised landscape is one of the oldest salt-production sites in Europe.", "loc_pamplona_name": "Pamplona", "loc_pamplona_alt": "Iruñea", "loc_pamplona_desc": "Capital of Navarre and famous the world over for San Fermín, when runners sprint ahead of bulls through the streets. Its Gothic cathedral, star-shaped citadel and pintxos scene reward visitors all year round.", "loc_roncesvalles_name": "Roncesvalles", "loc_roncesvalles_alt": "Orreaga", "loc_roncesvalles_desc": "A legendary pass on the Camino de Santiago, where Roland's epic battle was fought. Its Gothic collegiate church and monastery have welcomed weary pilgrims for a thousand years.", "loc_ujue_name": "Ujué", "loc_ujue_alt": "Uxue", "loc_ujue_desc": "A tiny hilltop village crowned by a fortified Romanesque church, offering sweeping views across Navarre. Its honey-coloured lanes feel frozen in the Middle Ages.", "loc_zugarramurdi_name": "Zugarramurdi", "loc_zugarramurdi_alt": "Zugarramurdi", "loc_zugarramurdi_desc": "A village of legend whose caves hosted the “witches of Zugarramurdi,” tried by the Inquisition in 1610. The vast limestone cavern and its museum tell one of Europe's most famous witchcraft stories.", "loc_biarritz_name": "Biarritz", "loc_biarritz_alt": "Miarritze", "loc_biarritz_desc": "The glamorous queen of the French Basque coast, once a favourite of Empress Eugénie and European royalty. Surf culture, a grand casino and the Rocher de la Vierge meet belle-époque elegance.", "loc_bayonne_name": "Bayonne", "loc_bayonne_alt": "Baiona", "loc_bayonne_desc": "A cultured river port known for its Gothic cathedral, half-timbered houses and, above all, its chocolate. Bayonne gave France its chocolate trade and remains a gourmet capital of the north.", "loc_saint-jean-de-luz_name": "Saint-Jean-de-Luz", "loc_saint-jean-de-luz_alt": "Donibane Lohizune", "loc_saint-jean-de-luz_desc": "A sheltered fishing port and royal wedding town, where Louis XIV married María Teresa in 1660. A crescent bay, colourful Basque houses and a lively old harbour make it irresistible.", "loc_la-rhune_name": "La Rhune", "loc_la-rhune_alt": "Larrun", "loc_la-rhune_desc": "The western Pyrenees' signature peak (905 m), climbed by a charming 1924 rack railway. Panoramic views sweep across the coast, the mountains and both sides of the French–Spanish border.", "region_Bizkaia": "Bizkaia", "region_Gipuzkoa": "Gipuzkoa", "region_Araba": "Araba", "region_Navarre": "Navarre", "region_Iparralde": "Iparralde", "tag_city": "City", "tag_culture": "Culture", "tag_art": "Art", "tag_architecture": "Architecture", "tag_natural": "Natural wonder", "tag_heritage": "Heritage", "tag_coast": "Coast", "tag_surf": "Surf", "tag_history": "History", "tag_unesco": "UNESCO", "tag_engineering": "Engineering", "tag_nature": "Nature", "tag_food": "Food", "tag_geology": "Geology", "tag_town": "Town", "tag_green": "Green", "tag_wine": "Wine country", "tag_festival": "Festival", "tag_camino": "Camino", "tag_village": "Village", "tag_legend": "Legend", "tag_mountain": "Mountain", "tag_spiritual": "Spiritual"}, "es": {"title": "Lugares icónicos del País Vasco — Euskal Herria", "nav_about": "La Región", "nav_places": "Lugares", "nav_credits": "Créditos", "hero_title": "El País Vasco", "hero_sub": "Lugares icónicos de una tierra entre el mar y las montañas", "hero_lead": "Veinticuatro lugares extraordinarios en Bizkaia, Gipuzkoa, Álava, Navarra e Iparralde: desde el museo de titanio de Frank Gehry y las escaleras de piedra del dragón hasta los acantilados de flysch, las salinas y las cuevas de las brujas.", "cta1": "Explorar los lugares", "cta2": "Sobre la región", "about_tag": "La Región", "about_h2": "Un país de siete provincias", "about_p1": "El País Vasco — <em>Euskal Herria</em>, «la tierra de los vascohablantes» — se extiende a ambos lados de los Pirineos occidentales, donde España se encuentra con Francia. Es la patria de los vascos, uno de los pueblos más antiguos de Europa, con una lengua, el <em>euskara</em>, que desconcierta a los lingüistas: un aislado vivo sin parentesco con ninguna otra lengua del mundo.", "about_p2": "Históricamente cuenta con siete provincias: <strong>Bizkaia</strong>, <strong>Gipuzkoa</strong>, <strong>Álava</strong> y <strong>Navarra</strong> en España, y <strong>Lapurdi</strong>, <strong>Zuberoa</strong> y <strong>Behe Nafarroa</strong> (en conjunto, <em>Iparralde</em>) en Francia. El paisaje va de las salvajes playas atlánticas y los pueblos pesqueros a los verdes valles, los viñedos y tres de los grandes museos modernos del país.", "about_p3": "Su gente está profundamente orgullosa de su identidad, expresada en la <em>ikurriña</em> roja, verde y blanca, el símbolo giratorio del <em>lauburu</em>, el deporte de la <em>pelota</em> y una cultura culinaria que ha convertido a San Sebastián en uno de los mejores lugares del mundo para comer.", "caption": "Los acantilados de flysch de Zumaia: 60 millones de años de historia de la Tierra, en la costa de Gipuzkoa.", "places_tag": "Los Lugares", "places_h2": "Lugares por los que cruzarías el mundo", "places_sub": "Filtra por provincia o región. Los colores coinciden con las etiquetas de cada lugar.", "all": "Todos", "credits_summary": "Créditos y licencias de las imágenes (© de sus respectivos autores, vía Wikimedia Commons)", "footer": "Guía informativa hecha por un aficionado sobre los lugares icónicos del País Vasco / Euskal Herria. Las descripciones se ofrecen de buena fe; las fotografías se atribuyen a sus autores bajo sus respectivas licencias.", "fact_0_k": "7", "fact_0_l": "Provincias tradicionales", "fact_1_k": "Euskara", "fact_1_l": "La lengua aislada más antigua de Europa", "fact_2_k": "3", "fact_2_l": "Sitios de la UNESCO incluidos aquí", "fact_3_k": "1", "fact_3_l": "Ola izquierda de fama mundial (Mundaka)", "fact_4_k": "≈ 3M", "fact_4_l": "Vascoparlantes y residentes", "fact_5_k": "Golfo de Bizkaia", "fact_5_l": "Salvaje costa atlántica", "loc_bilbao_name": "Bilbao", "loc_bilbao_alt": "Bilbo", "loc_bilbao_desc": "La ciudad más grande del País Vasco y su motor cultural. Antiguo puerto industrial, Bilbao se reinventó como capital del diseño y del arte, con un Casco Viejo peatonal, una célebre escena gastronómica y paseos junto a la ría que conducen al Guggenheim.", "loc_guggenheim_name": "Museo Guggenheim Bilbao", "loc_guggenheim_alt": "Guggenheim Bilbao Museoa", "loc_guggenheim_desc": "La obra maestra de titanio de Frank Gehry, inaugurada en 1997, convirtió una ciudad naval en decadencia en un destino mundial. Sus curvas brillantes, semejantes a un barco y custodiadas por el gigantesco «Puppy» de Jeff Koons, son el emblema del renacer de Bilbao.", "loc_gaztelugatxe_name": "San Juan de Gaztelugatxe", "loc_gaztelugatxe_alt": "Gaztelugatxe", "loc_gaztelugatxe_desc": "Una ermita de piedra encaramada a un pequeño islote, a la que se llega por un puente sinuoso y 241 escalones. Famosa en todo el mundo como «Dragonstone» en Juego de Tronos, es el rincón más espectacular de la costa de Bizkaia.", "loc_mundaka_name": "Mundaka", "loc_mundaka_alt": "Mundaka", "loc_mundaka_desc": "Un pueblo pesquero de postal en la desembocadura de la ría de Urdaibai, hogar de una de las olas izquierdas más famosas de Europa. Las casas encaladas y la pequeña capilla de Santa Catalina dominan el agua.", "loc_guernica_name": "Gernika", "loc_guernica_alt": "Guernica", "loc_guernica_desc": "La villa inmortalizada por el Guernica de Picasso tras su bombardeo en 1937. Su Casa de Juntas y el simbólico Árbol de Gernika siguen siendo el corazón del autogobierno y la identidad vascos.", "loc_vizcaya-bridge_name": "Puente de Bizkaia", "loc_vizcaya-bridge_alt": "Bizkaiko Zubia", "loc_vizcaya-bridge_desc": "El puente transbordador más antiguo del mundo (1893) y Patrimonio de la Humanidad de la UNESCO. Traslada coches y pasajeros de una orilla a otra de la ría del Nervión en una barquilla suspendida: una elegante proeza de la ingeniería industrial.", "loc_urdaibai_name": "Reserva de la Biosfera de Urdaibai", "loc_urdaibai_alt": "Urdaibai", "loc_urdaibai_desc": "Una Reserva de la Biosfera de la UNESCO donde se encuentran el río, la marisma y la costa atlántica. Su estuario y sus acantilados albergan una rica avifauna y enlazan playas, los pueblos de Mundaka y Bermeo y la antigua cueva de Santimamiñe.", "loc_san-sebastian_name": "San Sebastián", "loc_san-sebastian_alt": "Donostia", "loc_san-sebastian_desc": "Una joya costera de la belle époque, famosa por la perfecta bahía en forma de concha de La Concha y una de las mayores concentraciones de estrellas Michelin del mundo. Elegantes bulevares, bares de pintxos y el monte Igueldo enmarcan la vista.", "loc_zumaia-flysch_name": "Flysch de Zumaia", "loc_zumaia-flysch_alt": "Zumaia", "loc_zumaia-flysch_desc": "Formaciones rocosas estratificadas que se leen como las páginas de un libro gigante y registran 60 millones de años de historia de la Tierra. Los acantilados de la playa de Itzurun son un lugar de peregrinación para geólogos y fotógrafos.", "loc_hondarribia_name": "Hondarribia", "loc_hondarribia_alt": "Fuenterrabía", "loc_hondarribia_desc": "Una villa fortificada fronteriza frente a Hendaya, con un casco medieval amurallado, un castillo hoy Parador y un colorido barrio de pescadores junto a la ría.", "loc_onati_name": "Oñati", "loc_onati_alt": "Oñate", "loc_onati_desc": "Sede de la universidad más antigua del País Vasco (1540). Su plaza mayor porticada y su colegio renacentista la convierten en una de las villas históricas más bellas de la región, y en puerta de entrada a las montañas de Arantzazu.", "loc_arantzazu_name": "Santuario de Arantzazu", "loc_arantzazu_alt": "Arantzazuko santutegia", "loc_arantzazu_desc": "Una atrevida basílica moderna enclavada en el macizo de Aizkorri, decorada con esculturas monumentales de Jorge Oteiza y obra de Eduardo Chillida. Un hito espiritual y artístico del renacimiento cultural vasco.", "loc_loyola_name": "Santuario de Loyola", "loc_loyola_alt": "Loiolako santutegia", "loc_loyola_desc": "Lugar de nacimiento de San Ignacio de Loyola, fundador de los jesuitas. El monumental santuario barroco, coronado por una inmensa cúpula dorada, es uno de los conjuntos religiosos más grandiosos de España.", "loc_vitoria-gasteiz_name": "Vitoria-Gasteiz", "loc_vitoria-gasteiz_alt": "Gasteiz", "loc_vitoria-gasteiz_desc": "La capital del País Vasco y pionera europea de la vida urbana sostenible. Su casco medieval en forma de almendra y la Plaza de la Virgen Blanca conviven con un célebre «anillo verde» de parques.", "loc_laguardia_name": "Laguardia", "loc_laguardia_alt": "Guardia", "loc_laguardia_desc": "Una villa medieval amurallada en lo alto de una colina, en plena Rioja Alavesa. Sus bodegas, callejones empedrados y vistas sobre los viñedos la convierten en la capital del enoturismo vasco.", "loc_anana_name": "Salinas de Añana", "loc_anana_alt": "Añanako Gatz Harana", "loc_anana_desc": "Un raro valle salino interior con miles de terrazas de evaporación de madera, explotadas desde la época romana. Este paisaje excepcional, reconocido por la UNESCO, es uno de los yacimientos de sal más antiguos de Europa.", "loc_pamplona_name": "Pamplona", "loc_pamplona_alt": "Iruña", "loc_pamplona_desc": "Capital de Navarra y famosa en todo el mundo por San Fermín, cuando los corredores se lanzan ante los toros por las calles. Su catedral gótica, su ciudadela estrellada y su escena de pintxos recompensan al visitante todo el año.", "loc_roncesvalles_name": "Roncesvalles", "loc_roncesvalles_alt": "Orreaga", "loc_roncesvalles_desc": "Un paso legendario del Camino de Santiago, donde se libró la épica batalla de Roldán. Su colegiata gótica y su monasterio acogen a los peregrinos desde hace mil años.", "loc_ujue_name": "Ujué", "loc_ujue_alt": "Uxue", "loc_ujue_desc": "Una pequeña aldea en lo alto de una colina, coronada por una iglesia románica fortificada, con amplias vistas de Navarra. Sus callejones color miel parecen detenidos en la Edad Media.", "loc_zugarramurdi_name": "Zugarramurdi", "loc_zugarramurdi_alt": "Zugarramurdi", "loc_zugarramurdi_desc": "Una aldea de leyenda cuyas cuevas acogieron a las «brujas de Zugarramurdi», juzgadas por la Inquisición en 1610. La vasta caverna de caliza y su museo cuentan una de las historias de brujería más famosas de Europa.", "loc_biarritz_name": "Biarritz", "loc_biarritz_alt": "Miarritze", "loc_biarritz_desc": "La glamurosa reina de la costa vasca francesa, antaño favorita de la emperatriz Eugenia y de la realeza europea. La cultura del surf, un gran casino y la Rocher de la Vierge se dan cita con la elegancia de la belle époque.", "loc_bayonne_name": "Bayona", "loc_bayonne_alt": "Baiona", "loc_bayonne_desc": "Un culto puerto fluvial conocido por su catedral gótica, sus casas de entramado de madera y, sobre todo, su chocolate. Bayona dio a Francia su comercio de chocolate y sigue siendo una capital gourmet del norte.", "loc_saint-jean-de-luz_name": "San Juan de Luz", "loc_saint-jean-de-luz_alt": "Donibane Lohizune", "loc_saint-jean-de-luz_desc": "Un puerto pesquero resguardado y villa de boda real, donde Luis XIV se casó con María Teresa en 1660. Una bahía en forma de media luna, casas vascas de colores y un animado puerto viejo.", "loc_la-rhune_name": "La Rhune", "loc_la-rhune_alt": "Larrun", "loc_la-rhune_desc": "El pico emblemático de los Pirineos occidentales (905 m), al que sube un encantador tren cremallera de 1924. Las vistas panorámicas abarcan la costa, las montañas y ambos lados de la frontera franco-española.", "region_Bizkaia": "Bizkaia", "region_Gipuzkoa": "Gipuzkoa", "region_Araba": "Álava", "region_Navarre": "Navarra", "region_Iparralde": "Iparralde", "tag_city": "Ciudad", "tag_culture": "Cultura", "tag_art": "Arte", "tag_architecture": "Arquitectura", "tag_natural": "Maravilla natural", "tag_heritage": "Patrimonio", "tag_coast": "Costa", "tag_surf": "Surf", "tag_history": "Historia", "tag_unesco": "UNESCO", "tag_engineering": "Ingeniería", "tag_nature": "Naturaleza", "tag_food": "Gastronomía", "tag_geology": "Geología", "tag_town": "Villa", "tag_green": "Verde", "tag_wine": "Tierra del vino", "tag_festival": "Fiesta", "tag_camino": "Camino", "tag_village": "Aldea", "tag_legend": "Leyenda", "tag_mountain": "Montaña", "tag_spiritual": "Espiritual"}, "eu": {"title": "Euskal Herriko leku ikonikoak — Euskal Herria", "nav_about": "Eskualdea", "nav_places": "Lekuak", "nav_credits": "Kredituak", "hero_title": "Euskal Herria", "hero_sub": "Itsasoaren eta mendien arteko herri baten leku ikonikoak", "hero_lead": "Hogeita lau leku aparta Bizkaia, Gipuzkoa, Araba, Nafarroa eta Iparraldean: Frank Gehryren titaniozko museotik eta dragoiaren harrizko eskaileretara, flysch labarrak, gatz-haranak eta sorginen kobazuloak barne.", "cta1": "Arakatu lekuak", "cta2": "Eskualdeari buruz", "about_tag": "Eskualdea", "about_h2": "Zazpi probintziako herria", "about_p1": "Euskal Herria — euskaraz mintzo direnen lurra — Mendebaldeko Pirinioen bi aldeetan zabaltzen da, Espainia eta Frantzia elkartzen diren tokian. Euskaldunen sorterria da, Europako herririk zaharrenetako bat, hizkuntza batekin, <em>euskara</em>, hizkuntzalariek ulertzen ez dutena: munduan beste inongo hizkuntzarekin ahaidetasunik ez duen hizkuntza bakartua.", "about_p2": "Historikoki zazpi probintzia ditu: <strong>Bizkaia</strong>, <strong>Gipuzkoa</strong>, <strong>Araba</strong> eta <strong>Nafarroa</strong> Espainian, eta <strong>Lapurdi</strong>, <strong>Zuberoa</strong> eta <strong>Behe Nafarroa</strong> (elkarrekin, <em>Iparralde</em>) Frantzian. Paisaia hondartza atlantiko basatietatik eta arrantzale-herrietatik haran berdeetara, mahastietara eta herrialdeko hiru museo moderno handietara doa.", "about_p3": "Bere jendea oso harro dago bere nortasunaz, bandera gorri, berde eta zurian (<em>ikurrina</em>), <em>lauburuaren</em> ikurrean, <em>pilota</em> jokoan eta San Sebastian munduko jateko lekurik onenetakoa bihurtu duen sukaldaritza-kulturan islatzen dena.", "caption": "Zumaiako flysch labarrak: Lurraren historiako 60 milioi urte, Gipuzkoako kostaldean.", "places_tag": "Lekuak", "places_h2": "Mundua zeharkatzeko moduko lekuak", "places_sub": "Iragazi probintziaren edo eskualdearen arabera. Koloreak leku bakoitzaren etiketei dagozkie.", "all": "Guztiak", "credits_summary": "Irudi-kredituak eta lizentziak (© egile bakoitza, Wikimedia Commons bidez)", "footer": "Zale batek egindako gida informatzailea Euskal Herriko leku ikonikoei buruz. Deskribapenak borondate onez ematen dira; argazkiak egileei egozten zaizkie beren lizentzien arabera.", "fact_0_k": "7", "fact_0_l": "Probintzia tradizionalak", "fact_1_k": "Euskara", "fact_1_l": "Europako hizkuntza bakartu zaharrena", "fact_2_k": "3", "fact_2_l": "Hemen agertzen diren UNESCO ondareak", "fact_3_k": "1", "fact_3_l": "Mundu osoan ezaguna den ezker olatua (Mundaka)", "fact_4_k": "≈ 3M", "fact_4_l": "Euskaldunak eta biztanleak", "fact_5_k": "Bizkaiko Golkoa", "fact_5_l": "Atlantikoko kostalde basatia", "loc_bilbao_name": "Bilbo", "loc_bilbao_alt": "Bilbao", "loc_bilbao_desc": "Euskal Herriko hiri handiena eta kultura-motorra. Industriako portu zaharra izandakoa, Bilbo diseinuaren eta artearen hiriburu bihurtu zen berriz: Alde Zaharra oinez ibiltzekoa, gastronomia-eszena ospetsua eta Guggenheimera daramaten ibaiko pasealekuak.", "loc_guggenheim_name": "Guggenheim Bilbao Museoa", "loc_guggenheim_alt": "Guggenheim Museoa", "loc_guggenheim_desc": "Frank Gehryren titaniozko maisulana, 1997an inauguratua, gainbeheran zegoen itsasontzi-hiri bat munduko helmuga bihurtu zuen. Itsasontzi baten antzeko kurba distiratsuak, Jeff Koonsen «Puppy» erraldoiak zaintzen dituenak, Bilboren berpizkundearen ikurra dira.", "loc_gaztelugatxe_name": "San Juan de Gaztelugatxe", "loc_gaztelugatxe_alt": "Gaztelugatxe", "loc_gaztelugatxe_desc": "Uhartetxo batean kokatutako harrizko ermita, harrizko zubi bihurri bat eta 241 eskailera igarota iristen dena. Mundu osoan ezaguna Game of Thrones telesaileko «Dragonstone» gisa, Bizkaiko kostaldeko txokorik ikusgarriena da.", "loc_mundaka_name": "Mundaka", "loc_mundaka_alt": "Mundaka", "loc_mundaka_desc": "Urdaibaiko itsasadarraren bokalean dagoen arrantzale-herri ederra, Europan ospetsuenetakoa den ezker olatu baten jaioterria. Etxe zuriak eta Santa Katalina kapera txikia uraren gainean daude.", "loc_guernica_name": "Gernika", "loc_guernica_alt": "Guernica", "loc_guernica_desc": "1937ko bonbardaketaren ondoren Picassoren Guernica margolanak hilezkortu zuen herria. Bere Batzarretxea eta Gernikako Arbola sinbolikoa euskal autogobernuaren eta nortasunaren bihotza dira oraindik.", "loc_vizcaya-bridge_name": "Bizkaiko Zubia", "loc_vizcaya-bridge_alt": "Zubi Esekia", "loc_vizcaya-bridge_desc": "Munduko zubi transbordadore zaharrena (1893) eta UNESCOren Gizateriaren Ondarea. Kotxeak eta bidaiariak Nerbioi itsasadarraren bi ertzetan zehar garraiatzen ditu zintzilik dagoen ontzi batean: ingeniaritza industrialaren balentria dotorea.", "loc_urdaibai_name": "Urdaibaiko Biosfera Erreserba", "loc_urdaibai_alt": "Urdaibai", "loc_urdaibai_desc": "UNESCOren Biosfera Erreserba bat, non ibaia, padura eta Atlantikoko kostaldea bat egiten duten. Bere itsasadarrak eta labarrek hegazti-aberastasun handia gordetzen dute, eta hondartzak, Mundaka eta Bermeoko herriak eta Santimamiñe kobazulo zaharra lotzen dituzte.", "loc_san-sebastian_name": "Donostia", "loc_san-sebastian_alt": "San Sebastián", "loc_san-sebastian_desc": "Belle époqueko kostaldeko harribitxia, La Concha badia perfektuarengatik eta munduko Michelin izar kontzentraziorik handienetako batengatik ezaguna. Bulebar dotoreek, pintxo-taberrek eta Igueldo mendiak ikuspegia osatzen dute.", "loc_zumaia-flysch_name": "Zumaiako flyscha", "loc_zumaia-flysch_alt": "Zumaia", "loc_zumaia-flysch_desc": "Liburu erraldoi baten orrialdeak bezala irakurtzen diren arroka-geruzak, Lurraren historiako 60 milioi urte jasotzen dituztenak. Itzurungo hondartzako labarrak erromes-leku dira geologo eta argazkilarientzat.", "loc_hondarribia_name": "Hondarribia", "loc_hondarribia_alt": "Hondarribia", "loc_hondarribia_desc": "Hendaia parean dagoen muga-herri gotortua, harresiz inguratutako Erdi Aroko alde zahar batekin, gaur egun Parador den gaztelu batekin eta arrantzaleen auzo koloretsu batekin itsasadarraren ondoan.", "loc_onati_name": "Oñati", "loc_onati_alt": "Oñati", "loc_onati_desc": "Euskal Herriko unibertsitaterik zaharrena (1540) duen herria. Bere arkupeetako plaza nagusiak eta Errenazimentuko ikastetxeak eskualdeko herri historikorik ederrenetakoa bihurtzen dute, eta Arantzazuko mendietarako sarrera.", "loc_arantzazu_name": "Arantzazuko santutegia", "loc_arantzazu_alt": "Arantzazu", "loc_arantzazu_desc": "Aizkorriko mendigunean kokatutako basilika moderno ausarta, Jorge Oteizaren eskultura monumentalez eta Eduardo Chillidaren lanekin apaindua. Euskal berpizkunde kulturalaren mugarri espiritual eta artistikoa.", "loc_loyola_name": "Loiolako santutegia", "loc_loyola_alt": "Loyola", "loc_loyola_desc": "Ignazio Loiolakoa, jesuiten sortzailea, jaio zen lekua. Barrokozko santutegi monumentala, urrezko kupula izugarri batez koroatua, Espainiako multzo erlijioso ikusgarrienetako bat da.", "loc_vitoria-gasteiz_name": "Gasteiz", "loc_vitoria-gasteiz_alt": "Vitoria-Gasteiz", "loc_vitoria-gasteiz_desc": "Euskal Herriko hiriburua eta hiri-bizitza jasangarriaren aitzindari europarra. Bere almendra-formako Erdi Aroko alde zaharra eta Andre Maria Zuriaren plaza parke-eraztun berde ospetsu batekin batera daude.", "loc_laguardia_name": "Guardia", "loc_laguardia_alt": "Laguardia", "loc_laguardia_desc": "Muino baten gaineko Erdi Aroko herri harresitua, Arabako Errioxan. Bere upategiek, galtzada-harrizko kaleek eta mahastien gaineko ikuspegiek euskal ardo-turismoko hiriburu bihurtzen dute.", "loc_anana_name": "Añanako Gatz Harana", "loc_anana_alt": "Salinas de Añana", "loc_anana_desc": "Barnealdeko gatz-haran bitxia, zurezko milaka lurruntze-terraza dituena, erromatar garaitik ustiatuak. UNESCOk aitortutako paisaia aparta hau Europako gatz-ekoizpen gune zaharrenetako bat da.", "loc_pamplona_name": "Iruñea", "loc_pamplona_alt": "Pamplona", "loc_pamplona_desc": "Nafarroako hiriburua, mundu osoan Sanferminengatik ezaguna, korrikalariek zezenen aurrean kaleetan zehar egiten dutenean. Bere katedral gotikoak, izar-formako zitadelak eta pintxo-eszenak urte osoan saritzen dute bisitaria.", "loc_roncesvalles_name": "Orreaga", "loc_roncesvalles_alt": "Roncesvalles", "loc_roncesvalles_desc": "Donejakue Bideko mendate legendarioa, non Rolanden bataila epikoa gertatu zen. Bere kolegiata eliza gotikoak eta monasterioak mila urte daramatzate erromesak hartzen.", "loc_ujue_name": "Uxue", "loc_ujue_alt": "Ujué", "loc_ujue_desc": "Muino baten gaineko herrixka txikia, eliza erromaniko gotortu batez koroatua, Nafarroako ikuspegi zabalak eskaintzen dituena. Bere ezti-koloreko kaleak Erdi Aroan geldituak ematen dute.", "loc_zugarramurdi_name": "Zugarramurdi", "loc_zugarramurdi_alt": "Zugarramurdi", "loc_zugarramurdi_desc": "Kondairazko herrixka, bere kobazuloek «Zugarramurdiko sorginak» hartu zituztenekoa, Inkisizioak 1610ean epaituak. Kareharrizko haitzulo zabalak eta museoak Europako sorginkeria-istoriorik ospetsuenetako bat kontatzen dute.", "loc_biarritz_name": "Miarritze", "loc_biarritz_alt": "Biarritz", "loc_biarritz_desc": "Euskal kostalde frantseseko erregina glamurosa, garai batean Eugenia enperatrizaren eta Europako errege-erreginen gogokoena. Surfa, kasino handi bat eta Rocher de la Vierge belle époqueko dotoreziarekin bat egiten dute.", "loc_bayonne_name": "Baiona", "loc_bayonne_alt": "Baiona", "loc_bayonne_desc": "Ibai-portu kultua, katedral gotikoagatik, zurezko egiturazko etxeei esker eta, batez ere, txokolateagatik ezaguna. Baionak Frantziani txokolate-merkataritza eman zion eta iparraldeko gourmet-hiriburua izaten jarraitzen du.", "loc_saint-jean-de-luz_name": "Donibane Lohizune", "loc_saint-jean-de-luz_alt": "Saint-Jean-de-Luz", "loc_saint-jean-de-luz_desc": "Portu arrantzale babestua eta errege-ezkontzako herria, non Luis XIV.a Maria Teresarekin ezkondu zen 1660an. Ilargierdi-formako badia, euskal etxe koloretsuak eta portu zahar bizia.", "loc_la-rhune_name": "Larrun", "loc_la-rhune_alt": "La Rhune", "loc_la-rhune_desc": "Mendebaldeko Pirinioetako gailur enblematikoa (905 m), 1924ko tren kremailera xarmangarri batek igotzen duena. Ikuspegi panoramikoek kostaldea, mendiak eta frantziar-spaniar mugaren bi aldeak hartzen dituzte.", "region_Bizkaia": "Bizkaia", "region_Gipuzkoa": "Gipuzkoa", "region_Araba": "Araba", "region_Navarre": "Nafarroa", "region_Iparralde": "Iparralde", "tag_city": "Hiria", "tag_culture": "Kultura", "tag_art": "Artea", "tag_architecture": "Arkitektura", "tag_natural": "Naturaren miraria", "tag_heritage": "Ondarea", "tag_coast": "Kostaldea", "tag_surf": "Surfa", "tag_history": "Historia", "tag_unesco": "UNESCO", "tag_engineering": "Ingeniaritza", "tag_nature": "Natura", "tag_food": "Gastronomia", "tag_geology": "Geologia", "tag_town": "Herria", "tag_green": "Berdea", "tag_wine": "Ardoaren lurra", "tag_festival": "Jaia", "tag_camino": "Bidea", "tag_village": "Herrixka", "tag_legend": "Kondaira", "tag_mountain": "Mendia", "tag_spiritual": "Izpirituala"}, "fr": {"title": "Lieux emblématiques du Pays basque — Euskal Herria", "nav_about": "La Région", "nav_places": "Lieux", "nav_credits": "Crédits", "hero_title": "Le Pays basque", "hero_sub": "Lieux emblématiques d'une terre entre mer et montagne", "hero_lead": "Vingt-quatre lieux remarquables en Biscaye, Guipuscoa, Alava, Navarre et Iparralde : du musée de titane de Frank Gehry aux escaliers de pierre du dragon, en passant par les falaises de flysch, les salines et les grottes des sorcières.", "cta1": "Explorer les lieux", "cta2": "À propos de la région", "about_tag": "La Région", "about_h2": "Un pays de sept provinces", "about_p1": "Le Pays basque — <em>Euskal Herria</em>, « le pays de ceux qui parlent basque » — s'étend de part et d'autre des Pyrénées occidentales, là où l'Espagne rencontre la France. C'est la patrie des Basques, l'un des peuples les plus anciens d'Europe, doté d'une langue, l'<em>euskara</em>, qui déroute les linguistes : un isolat vivant sans parenté avec aucune autre langue au monde.", "about_p2": "Elle compte historiquement sept provinces : la <strong>Biscaye</strong>, le <strong>Guipuscoa</strong>, l'<strong>Alava</strong> et la <strong>Navarre</strong> en Espagne, et le <strong>Labourd</strong>, la <strong>Soule</strong> et la <strong>Basse-Navarre</strong> (réunis sous le nom d'<em>Iparralde</em>) en France. Le paysage va des plages atlantiques sauvages et des villages de pêcheurs aux vertes vallées, aux vignobles et à trois des grands musées modernes du pays.", "about_p3": "Sa population est profondément fière de son identité, exprimée par l'<em>ikurriña</em> rouge, verte et blanche, le symbole tournant du <em>lauburu</em>, le sport de la <em>pelote</em> et une culture culinaire qui a fait de Saint-Sébastien l'un des meilleurs endroits du monde pour manger.", "caption": "Les falaises de flysch de Zumaia : 60 millions d'années d'histoire de la Terre, sur la côte du Guipuscoa.", "places_tag": "Les Lieux", "places_h2": "Des lieux qui valent le tour du monde", "places_sub": "Filtrez par province ou région. Les couleurs correspondent aux badges de chaque lieu.", "all": "Tous", "credits_summary": "Crédits et licences des images (© leurs auteurs respectifs, via Wikimedia Commons)", "footer": "Guide informatif réalisé par un passionné sur les lieux emblématiques du Pays basque / Euskal Herria. Les descriptions sont fournies de bonne foi ; les photographies sont créditées à leurs auteurs selon leurs licences respectives.", "fact_0_k": "7", "fact_0_l": "Provinces traditionnelles", "fact_1_k": "Euskara", "fact_1_l": "Le plus ancien isolat linguistique d'Europe", "fact_2_k": "3", "fact_2_l": "Sites UNESCO présentés ici", "fact_3_k": "1", "fact_3_l": "Vague gauche de renommée mondiale (Mundaka)", "fact_4_k": "≈ 3M", "fact_4_l": "Locuteurs basques et habitants", "fact_5_k": "Golfe de Gascogne", "fact_5_l": "Côte atlantique sauvage", "loc_bilbao_name": "Bilbao", "loc_bilbao_alt": "Bilbo", "loc_bilbao_desc": "La plus grande ville du Pays basque et son moteur culturel. Ancien port industriel, Bilbao s'est réinventée en capitale du design et de l'art, avec un Casco Viejo piéton, une scène gastronomique réputée et des promenades le long de la ria qui mènent au Guggenheim.", "loc_guggenheim_name": "Musée Guggenheim Bilbao", "loc_guggenheim_alt": "Guggenheim Bilbao Museoa", "loc_guggenheim_desc": "Le chef-d'œuvre de titane de Frank Gehry, inauguré en 1997, a transformé une ville portuaire en déclin en destination mondiale. Ses courbes scintillantes, semblables à un navire et gardées par l'immense « Puppy » de Jeff Koons, symbolisent la renaissance de Bilbao.", "loc_gaztelugatxe_name": "San Juan de Gaztelugatxe", "loc_gaztelugatxe_alt": "Gaztelugatxe", "loc_gaztelugatxe_desc": "Une chapelle de pierre perchée sur un îlot, accessible par un pont de pierre sinueux et 241 marches. Mondialement connue comme « Dragonstone » dans Game of Thrones, c'est le site le plus spectaculaire de la côte de Biscaye.", "loc_mundaka_name": "Mundaka", "loc_mundaka_alt": "Mundaka", "loc_mundaka_desc": "Un village de pêcheurs de carte postale à l'embouchure de la ria d'Urdaibai, berceau de l'une des vagues gauches les plus célèbres d'Europe. Les maisons blanchies à la chaux et la petite chapelle Santa Catalina dominent l'eau.", "loc_guernica_name": "Gernika", "loc_guernica_alt": "Guernica", "loc_guernica_desc": "La ville immortalisée par le Guernica de Picasso après son bombardement en 1937. Sa maison des Juntes et le symbolique Arbre de Gernika demeurent le cœur de l'autonomie et de l'identité basques.", "loc_vizcaya-bridge_name": "Pont de Biscaye", "loc_vizcaya-bridge_alt": "Bizkaiko Zubia", "loc_vizcaya-bridge_desc": "Le plus ancien pont transbordeur du monde (1893) et site du patrimoine mondial de l'UNESCO. Il fait traverser voitures et passagers d'une rive à l'autre de la ria du Nervion dans une nacelle suspendue : un élégant exploit d'ingénierie industrielle.", "loc_urdaibai_name": "Réserve de biosphère d'Urdaibai", "loc_urdaibai_alt": "Urdaibai", "loc_urdaibai_desc": "Une réserve de biosphère de l'UNESCO où se rejoignent le fleuve, le marais et la côte atlantique. Son estuaire et ses falaises abritent une riche avifaune et relient les plages, les villages de Mundaka et Bermeo et l'ancienne grotte de Santimamiñe.", "loc_san-sebastian_name": "Saint-Sébastien", "loc_san-sebastian_alt": "Donostia", "loc_san-sebastian_desc": "Un joyau balnéaire de la Belle Époque, célèbre pour la baie parfaite en forme de coquille de La Concha et l'une des plus fortes concentrations d'étoiles Michelin au monde. Boulevards élégants, bars à pintxos et mont Igueldo encadrent la vue.", "loc_zumaia-flysch_name": "Flysch de Zumaia", "loc_zumaia-flysch_alt": "Zumaia", "loc_zumaia-flysch_desc": "Des formations rocheuses stratifiées qui se lisent comme les pages d'un livre géant et enregistrent 60 millions d'années d'histoire de la Terre. Les falaises de la plage d'Itzurun sont un lieu de pèlerinage pour géologues et photographes.", "loc_hondarribia_name": "Hondarribia", "loc_hondarribia_alt": "Fontarrabie", "loc_hondarribia_desc": "Une ville fortifiée frontalière face à Hendaye, avec un centre médiéval entouré de remparts, un château devenu Parador et un quartier de pêcheurs coloré au bord de la ria.", "loc_onati_name": "Oñati", "loc_onati_alt": "Oñate", "loc_onati_desc": "Siège de la plus ancienne université du Pays basque (1540). Sa grand-place à arcades et son collège Renaissance en font l'une des plus belles villes historiques de la région, et une porte d'entrée vers les montagnes d'Arantzazu.", "loc_arantzazu_name": "Sanctuaire d'Arantzazu", "loc_arantzazu_alt": "Arantzazuko santutegia", "loc_arantzazu_desc": "Une audacieuse basilique moderne nichée au cœur du massif d'Aizkorri, ornée de sculptures monumentales de Jorge Oteiza et d'œuvres d'Eduardo Chillida. Un jalon spirituel et artistique de la renaissance culturelle basque.", "loc_loyola_name": "Sanctuaire de Loyola", "loc_loyola_alt": "Loiolako santutegia", "loc_loyola_desc": "Lieu de naissance de saint Ignace de Loyola, fondateur des jésuites. Le monumental sanctuaire baroque, couronné d'une immense coupole dorée, est l'un des plus grandioses ensembles religieux d'Espagne.", "loc_vitoria-gasteiz_name": "Vitoria-Gasteiz", "loc_vitoria-gasteiz_alt": "Gasteiz", "loc_vitoria-gasteiz_desc": "La capitale du Pays basque et une pionnière européenne de la vie urbaine durable. Son centre médiéval en forme d'amande et la Plaza de la Virgen Blanca côtoient un célèbre « anneau vert » de parcs.", "loc_laguardia_name": "Laguardia", "loc_laguardia_alt": "Guardia", "loc_laguardia_desc": "Une ville médiévale fortifiée perchée sur une colline, au cœur de la Rioja Alavesa. Ses caves, ses ruelles pavées et ses vues sur les vignobles en font la capitale de l'œnotourisme basque.", "loc_anana_name": "Salines d'Añana", "loc_anana_alt": "Añanako Gatz Harana", "loc_anana_desc": "Une rare vallée salifère intérieure avec des milliers de terrasses d'évaporation en bois, exploitées depuis l'époque romaine. Ce paysage exceptionnel, reconnu par l'UNESCO, est l'un des plus anciens sites de production de sel d'Europe.", "loc_pamplona_name": "Pampelune", "loc_pamplona_alt": "Iruñea", "loc_pamplona_desc": "Capitale de la Navarre, mondialement connue pour la San Fermín, lorsque les coureurs s'élancent devant les taureaux dans les rues. Sa cathédrale gothique, sa citadelle en étoile et sa scène de pintxos récompensent le visiteur toute l'année.", "loc_roncesvalles_name": "Roncevaux", "loc_roncesvalles_alt": "Orreaga", "loc_roncesvalles_desc": "Un col légendaire du chemin de Saint-Jacques, où fut livrée l'épopée de Roland. Son église collégiale gothique et son monastère accueillent les pèlerins depuis mille ans.", "loc_ujue_name": "Ujué", "loc_ujue_alt": "Uxue", "loc_ujue_desc": "Un petit village au sommet d'une colline, couronné d'une église romane fortifiée, offrant de vastes vues sur la Navarre. Ses ruelles couleur miel semblent figées au Moyen Âge.", "loc_zugarramurdi_name": "Zugarramurdi", "loc_zugarramurdi_alt": "Zugarramurdi", "loc_zugarramurdi_desc": "Un village de légende dont les grottes ont abrité les « sorcières de Zugarramurdi », jugées par l'Inquisition en 1610. La vaste caverne calcaire et son musée racontent l'une des histoires de sorcellerie les plus célèbres d'Europe.", "loc_biarritz_name": "Biarritz", "loc_biarritz_alt": "Miarritze", "loc_biarritz_desc": "La reine glamour de la côte basque française, autrefois favorite de l'impératrice Eugénie et de la royauté européenne. Culture du surf, grand casino et Rocher de la Vierge côtoient l'élégance de la Belle Époque.", "loc_bayonne_name": "Bayonne", "loc_bayonne_alt": "Baiona", "loc_bayonne_desc": "Un port fluvial cultivé connu pour sa cathédrale gothique, ses maisons à colombages et, surtout, son chocolat. Bayonne a donné à la France son commerce du chocolat et reste une capitale gourmande du nord.", "loc_saint-jean-de-luz_name": "Saint-Jean-de-Luz", "loc_saint-jean-de-luz_alt": "Donibane Lohizune", "loc_saint-jean-de-luz_desc": "Un port de pêche abrité et une ville de mariage royal, où Louis XIV épousa Marie-Thérèse en 1660. Une baie en croissant, des maisons basques colorées et un vieux port animé.", "loc_la-rhune_name": "La Rhune", "loc_la-rhune_alt": "Larrun", "loc_la-rhune_desc": "Le sommet emblématique des Pyrénées occidentales (905 m), gravi par un charmant train à crémaillère de 1924. Les panoramas s'étendent sur la côte, les montagnes et les deux versants de la frontière franco-espagnole.", "region_Bizkaia": "Biscaye", "region_Gipuzkoa": "Guipuscoa", "region_Araba": "Alava", "region_Navarre": "Navarre", "region_Iparralde": "Iparralde", "tag_city": "Ville", "tag_culture": "Culture", "tag_art": "Art", "tag_architecture": "Architecture", "tag_natural": "Merveille naturelle", "tag_heritage": "Patrimoine", "tag_coast": "Côte", "tag_surf": "Surf", "tag_history": "Histoire", "tag_unesco": "UNESCO", "tag_engineering": "Ingénierie", "tag_nature": "Nature", "tag_food": "Gastronomie", "tag_geology": "Géologie", "tag_town": "Bourg", "tag_green": "Vert", "tag_wine": "Pays du vin", "tag_festival": "Fête", "tag_camino": "Chemin", "tag_village": "Village", "tag_legend": "Légende", "tag_mountain": "Montagne", "tag_spiritual": "Spirituel"}};
+  function setLang(lang){
+    if(!I18N[lang]) lang='en';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var k = el.getAttribute('data-i18n');
+      var v = (I18N[lang] && I18N[lang][k] != null) ? I18N[lang][k] : (I18N.en[k] != null ? I18N.en[k] : null);
+      if(v !== null) el.innerHTML = v;
+    });
+    if(I18N[lang].title) document.title = I18N[lang].title;
+    document.querySelectorAll('.langs button').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang')===lang);
+    });
+    try{ localStorage.setItem('basque-lang', lang); }catch(e){}
+  }
+  document.querySelectorAll('.langs button').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-lang')); });
+  });
+  // in-page filters
+  var fbtns=document.querySelectorAll('.filter'), fcards=document.querySelectorAll('.loc');
+  fbtns.forEach(function(b){b.addEventListener('click',function(){
+    fbtns.forEach(function(x){x.classList.remove('active')});b.classList.add('active');
     var f=b.dataset.f;
-    cards.forEach(function(c){c.classList.toggle('hide',!(f==='all'||c.dataset.region===f));});
+    fcards.forEach(function(c){c.classList.toggle('hide',!(f==='all'||c.dataset.region===f));});
   });});
+  // initial language: saved choice, else browser language, else English
+  (function(){
+    var saved=null; try{ saved=localStorage.getItem('basque-lang'); }catch(e){}
+    var nav=((navigator.language||'en')+'').slice(0,2).toLowerCase();
+    var init = saved || (['en','es','eu','fr'].indexOf(nav)>=0 ? nav : 'en');
+    setLang(init);
+  })();
 </script>
 </body>
 </html>
