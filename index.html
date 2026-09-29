@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iconic Locations of the Basque Country — Euskal Herria</title>
+<meta name="description" content="A documented guide to the iconic locations of the Basque Country: cities, coast, mountains, art and heritage across Bizkaia, Gipuzkoa, Araba, Navarre and Iparralde." />
+<meta property="og:title" content="Iconic Locations of the Basque Country" />
+<meta property="og:description" content="Cities, coastlines, mountains and monuments of Euskal Herria." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%97%BA%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --cream:#f7f4ee; --paper:#ffffff; --ink:#20261f; --muted:#6b746a;
+    --red:#c8102e; --green:#0b7a3b; --line:#e4ded2;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; scroll-padding-top:74px}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2.5rem)}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;margin:0}
+
+  nav.top{position:sticky;top:0;z-index:50;background:rgba(247,244,238,.9);
+    backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav.top .inner{max-width:1200px;margin:0 auto;padding:.7rem clamp(1.1rem,4vw,2.5rem);
+    display:flex;align-items:center;justify-content:space-between;gap:1rem}
+  nav.top .logo{display:flex;align-items:center;gap:.6rem;font-family:"Playfair Display",serif;
+    font-weight:700;font-size:1.05rem;letter-spacing:.01em}
+  .lauburu{width:22px;height:22px;fill:var(--red)}
+  nav.top a{color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:600;margin-left:1.1rem}
+  nav.top a:hover{color:var(--ink)}
+
+  /* hero */
+  .hero{position:relative;min-height:80vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:#111}
+  .hero .bg{position:absolute;inset:0;background-image:url('images/gaztelugatxe.jpg');
+    background-size:cover;background-position:center 40%}
+  .hero .shade{position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(15,20,15,.35),rgba(15,20,15,.72) 60%,rgba(15,20,15,.92))}
+  .hero .content{position:relative;z-index:2;width:100%;padding:4rem 0 3rem;color:#fff}
+  .hero .eyebrow{font-size:.76rem;font-weight:700;letter-spacing:.4em;text-transform:uppercase;
+    color:#f4d58d;display:flex;align-items:center;gap:.6rem}
+  .hero .eyebrow .lauburu{fill:#f4d58d;width:18px;height:18px}
+  .hero h1{font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.02;margin:.5rem 0 .3rem;font-weight:800}
+  .hero .sub{font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.2rem,3vw,1.9rem);
+    color:#eadfce}
+  .hero .lead{max-width:620px;color:#d9d5cc;margin:1rem 0 1.6rem}
+  .hero .cta{display:flex;gap:.7rem;flex-wrap:wrap}
+  .btn{display:inline-block;padding:.7rem 1.4rem;border-radius:999px;text-decoration:none;
+    font-weight:700;font-size:.84rem;letter-spacing:.03em;background:#fff;color:var(--ink);transition:.2s}
+  .btn.alt{background:var(--red);color:#fff}
+  .btn:hover{transform:translateY(-2px)}
+
+  section{padding:clamp(2.75rem,6vw,4.75rem) 0}
+  .sec-head{margin-bottom:1.9rem;max-width:760px}
+  .sec-head .tag{font-size:.74rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red)}
+  .sec-head h2{font-size:clamp(2rem,5vw,3.2rem);margin:.2rem 0 .5rem;line-height:1.05}
+  .sec-head p{color:var(--muted);margin:0}
+
+  /* intro */
+  .intro{display:grid;grid-template-columns:1.15fr .85fr;gap:2.5rem;align-items:center}
+  .intro p{font-size:1.04rem;color:#3b423a;margin:0 0 1rem}
+  .intro figure{margin:0;border-radius:1rem;overflow:hidden;border:1px solid var(--line);
+    box-shadow:0 18px 40px rgba(30,30,20,.12)}
+  .intro figure img{width:100%}
+  .intro figcaption{font-size:.72rem;color:var(--muted);padding:.5rem .7rem;background:#fff}
+
+  /* facts */
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:.9rem;padding:1.2rem 1.15rem}
+  .fact .k{font-family:"Playfair Display",serif;font-size:1.5rem;font-weight:700;display:block}
+  .fact .l{font-size:.8rem;color:var(--muted)}
+  .fact.r .k{color:var(--red)} .fact.g .k{color:var(--green)}
+
+  /* filters */
+  .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.6rem}
+  .filter{border:1.5px solid var(--rc,#999);color:var(--rc,#333);background:transparent;
+    border-radius:999px;padding:.45rem 1rem;font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;
+    transition:.18s}
+  .filter:hover{background:color-mix(in srgb, var(--rc) 10%, transparent)}
+  .filter.active{background:var(--rc,#333);color:#fff}
+
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.5rem}
+  .loc{background:var(--paper);border:1px solid var(--line);border-radius:1rem;overflow:hidden;
+    display:flex;flex-direction:column;box-shadow:0 10px 26px rgba(30,30,20,.06);transition:.25s}
+  .loc:hover{transform:translateY(-5px);box-shadow:0 22px 46px rgba(30,30,20,.14)}
+  .loc.hide{display:none}
+  .loc-img{position:relative;aspect-ratio:16/10;overflow:hidden;background:#eee}
+  .loc-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+  .loc:hover .loc-img img{transform:scale(1.06)}
+  .region-badge{position:absolute;top:.7rem;left:.7rem;background:var(--rc);color:#fff;
+    font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    padding:.28rem .6rem;border-radius:999px}
+  .loc-body{padding:1.15rem 1.25rem 1.3rem;display:flex;flex-direction:column;flex:1}
+  .loc-body h3{font-size:1.32rem;line-height:1.15}
+  .alt{font-family:"Playfair Display",serif;font-style:italic;color:var(--red);font-size:.92rem;margin:.1rem 0 .6rem}
+  .loc-body p{margin:0 0 1rem;color:#414840;font-size:.93rem}
+  .chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.9rem}
+  .chip{font-size:.68rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    color:var(--green);background:#e9f2ea;border-radius:999px;padding:.22rem .6rem}
+  .credit{margin-top:auto;font-size:.66rem;color:#9a9f94}
+  .credit a{color:#8a8f84;text-decoration:none;border-bottom:1px dotted #c9cec2}
+
+  .credits{border-top:1px solid var(--line);margin-top:2rem;padding-top:1rem;color:var(--muted);font-size:.8rem}
+  .credits summary{cursor:pointer;font-weight:600;color:var(--ink)}
+  .credits ul{columns:2;column-gap:2rem;list-style:none;padding:0;margin:.6rem 0 0}
+  footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.8rem}
+
+  @media(max-width:820px){
+    .intro{grid-template-columns:1fr}
+    .credits ul{columns:1}
+    nav.top .links{display:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="inner">
+  <div class="logo"><svg class="lauburu" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(0 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(90 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(180 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(270 50 50)"/></svg> Basque Country</div>
+  <div class="links">
+    <a href="#about">About</a><a href="#places">Locations</a><a href="#credits">Credits</a>
+  </div>
+</div></nav>
+
+<header class="hero">
+  <div class="bg"></div><div class="shade"></div>
+  <div class="content wrap">
+    <div class="eyebrow"><svg class="lauburu" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(0 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(90 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(180 50 50)"/><path d="M50 50 C 46 30 54 14 78 10 C 64 26 60 38 50 50 Z" transform="rotate(270 50 50)"/></svg> Euskal Herria</div>
+    <h1>The Basque Country</h1>
+    <div class="sub">Iconic locations of a land between the mountains and the sea</div>
+    <p class="lead">Twenty-four remarkable places across Bizkaia, Gipuzkoa, Araba, Navarre and Iparralde
+      — from Frank Gehry's titanium museum and dragon-stone staircases to painted flysch cliffs,
+      salt valleys and witch-caves.</p>
+    <div class="cta">
+      <a class="btn alt" href="#places">Explore the Locations</a>
+      <a class="btn" href="#about">About the Region</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap">
+  <div class="sec-head">
+    <div class="tag">The Region</div>
+    <h2>A country of seven provinces</h2>
+  </div>
+  <div class="intro">
+    <div>
+      <p>The Basque Country — <em>Euskal Herria</em>, “the land of the Basque speakers” —
+      straddles the western Pyrenees where Spain meets France. It is home to the Basques, one of Europe's
+      oldest peoples, with a language, <em>Euskara</em>, that is a mystery to linguists: a living isolate
+      unrelated to any other tongue on Earth.</p>
+      <p>Historically it counts seven provinces: <strong>Bizkaia</strong>, <strong>Gipuzkoa</strong>,
+      <strong>Araba</strong> and <strong>Navarre</strong> in Spain, and <strong>Lapurdi</strong>,
+      <strong>Zuberoa</strong> and <strong>Behe Nafarroa</strong> (together <em>Iparralde</em>) in France.
+      The landscape runs from wild Atlantic surf beaches and fishing villages to green mountain valleys,
+      vineyards and three of the country's great modern museums.</p>
+      <p>Its people are fiercely proud of their identity — expressed in the red, green and white
+      <em>Ikurriña</em> flag, the swirling <em>lauburu</em> symbol, the sport of <em>pelota</em>, and a
+      culinary culture that has made San Sebastián one of the greatest places to eat on the planet.</p>
+    </div>
+    <figure>
+      <img src="images/zumaia-flysch.jpg" alt="The flysch cliffs of Zumaia" />
+      <figcaption>The flysch cliffs of Zumaia — 60 million years of Earth history, on the Gipuzkoa coast.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<!-- FACTS -->
+<section style="padding-top:0"><div class="wrap">
+  <div class="facts">
+    <div class="fact r"><span class="k">7</span><span class="l">Traditional provinces</span></div>
+    <div class="fact g"><span class="k">Euskara</span><span class="l">Europe's oldest language isolate</span></div>
+    <div class="fact"><span class="k">3</span><span class="l">UNESCO listings featured here</span></div>
+    <div class="fact g"><span class="k">1</span><span class="l">World-famous left-hand wave (Mundaka)</span></div>
+    <div class="fact r"><span class="k">≈ 3M</span><span class="l">Basque speakers &amp; residents</span></div>
+    <div class="fact"><span class="k">Bay of Biscay</span><span class="l">Wild Atlantic coastline</span></div>
+  </div>
+</div></section>
+
+<!-- LOCATIONS -->
+<section id="places" style="padding-top:0"><div class="wrap">
+  <div class="sec-head">
+    <div class="tag">The Locations</div>
+    <h2>Places worth crossing the world for</h2>
+    <p>Filter by province or region. Colours match the badges on each place.</p>
+  </div>
+  <div class="filters">
+    <button class="filter active" data-f="all" style="--rc:#20261f">All</button>
+    <button class="filter" data-f="Bizkaia" style="--rc:#c8102e">Bizkaia</button><button class="filter" data-f="Gipuzkoa" style="--rc:#0b7a3b">Gipuzkoa</button><button class="filter" data-f="Araba" style="--rc:#b06a00">Araba</button><button class="filter" data-f="Navarre" style="--rc:#6a2c8f">Navarre</button><button class="filter" data-f="Iparralde" style="--rc:#1c6ea4">Iparralde</button>
+  </div>
+  <div class="grid" id="grid">
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/bilbao.jpg" alt="Bilbao" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>Bilbao</h3>
+          <div class="alt">Bilbo</div>
+          <p>The largest city in the Basque Country and its cultural engine. Once a gritty industrial port, Bilbao reinvented itself as a capital of design and art, with a walkable Casco Viejo, a celebrated food scene and riverside promenades that draw you toward the Guggenheim.</p>
+          <div class="chips"><span class="chip">City</span><span class="chip">Culture</span></div>
+          <div class="credit">Photo: Tommie Hansen, Ardfern, Tomas Fano, 0Igor González Martín, Jesús Ignacio Bravo Soler, Pedro J Pacheco, Irekia/Gobierno Vasco, Euskaldunaa, Basotxerri, Eric Fischer, Tiia Monto, pictures Jettcom y Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3ACollage_de_Bilbao%2C_Pa%C3%ADs_Vasco%2C_Espa%C3%B1a.png" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/guggenheim.jpg" alt="Guggenheim Museum Bilbao" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>Guggenheim Museum Bilbao</h3>
+          <div class="alt">Guggenheim Bilbao Museoa</div>
+          <p>Frank Gehry&#x27;s titanium masterpiece, opened in 1997, turned a fading shipbuilding city into a global destination. Its shimmering, ship-like curves — guarded by Jeff Koons&#x27;s giant “Puppy” — are the emblem of Bilbao&#x27;s rebirth.</p>
+          <div class="chips"><span class="chip">Art</span><span class="chip">Architecture</span></div>
+          <div class="credit">Photo: Naotake Murayama · <a href="https://commons.wikimedia.org/wiki/File%3AMuseo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg" target="_blank" rel="noopener">CC BY 2.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/gaztelugatxe.jpg" alt="San Juan de Gaztelugatxe" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>San Juan de Gaztelugatxe</h3>
+          <div class="alt">Gaztelugatxe</div>
+          <p>A stone hermitage perched on a tiny islet, reached by a winding stone bridge and 241 steps. Famous worldwide as “Dragonstone” in Game of Thrones, it is the most dramatic spot on the Biscay coast.</p>
+          <div class="chips"><span class="chip">Natural Wonder</span><span class="chip">Heritage</span></div>
+          <div class="credit">Photo: Clementp.fr · <a href="https://commons.wikimedia.org/wiki/File%3AGaztelugatxe_en_espagne.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/mundaka.jpg" alt="Mundaka" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>Mundaka</h3>
+          <div class="alt">Mundaka</div>
+          <p>A picture-postcard fishing village at the mouth of the Urdaibai estuary, home to one of Europe&#x27;s most famous left-hand waves. Whitewashed houses and the little Santa Catalina chapel overlook the water.</p>
+          <div class="chips"><span class="chip">Coast</span><span class="chip">Surf</span></div>
+          <div class="credit">Photo: Mikel Arrazola · <a href="https://commons.wikimedia.org/wiki/File%3AMundaka%2C_Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY 3.0 es</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/guernica.jpg" alt="Gernika" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>Gernika</h3>
+          <div class="alt">Guernica</div>
+          <p>The town immortalised by Picasso&#x27;s Guernica after its bombing in 1937. Its Assembly House and the symbolic Tree of Gernika remain the beating heart of Basque self-government and identity.</p>
+          <div class="chips"><span class="chip">History</span><span class="chip">Heritage</span></div>
+          <div class="credit">Photo: Papamanila · <a href="https://commons.wikimedia.org/wiki/File%3AArbol_de_Gernika_d%C3%ADa.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/vizcaya-bridge.jpg" alt="Vizcaya Bridge" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>Vizcaya Bridge</h3>
+          <div class="alt">Bizkaiko Zubia</div>
+          <p>The world&#x27;s oldest transporter bridge (1893) and a UNESCO World Heritage Site. It ferries cars and passengers across the Nervión estuary in a suspended gondola — a graceful feat of industrial-age engineering.</p>
+          <div class="chips"><span class="chip">UNESCO</span><span class="chip">Engineering</span></div>
+          <div class="credit">Photo: Javier Mediavilla Ezquibela
+
+
+ Esta imagen tiene una licencia libre (que puedes ver abajo), pero si la usas fuera de los proyectos de Wikimedia, me gustaría que me informaras.  Gracias de antemano.
+
+Javier Mediavilla Ezquibela, autor de la fotografía
+ This image is under a free license (see below), but if you use it outwith Wikimedia projects, I&#x27;d like to be informed.  Thanks in advance.
+
+Javier Mediavilla Ezquibela, author of the  picture · <a href="https://commons.wikimedia.org/wiki/File%3AZubia_jun.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Bizkaia">
+        <div class="loc-img">
+          <img src="images/urdaibai.jpg" alt="Urdaibai Biosphere Reserve" loading="lazy" />
+          <span class="region-badge" style="--rc:#c8102e">Bizkaia</span>
+        </div>
+        <div class="loc-body">
+          <h3>Urdaibai Biosphere Reserve</h3>
+          <div class="alt">Urdaibai</div>
+          <p>A UNESCO Biosphere Reserve where river, marsh and Atlantic coast meet. Its estuary and cliffs shelter rich birdlife and link the beaches, the villages of Mundaka and Bermeo, and the ancient cave of Santimamiñe.</p>
+          <div class="chips"><span class="chip">Nature</span><span class="chip">UNESCO</span></div>
+          <div class="credit">Photo: Eltito · <a href="https://commons.wikimedia.org/wiki/File%3AMundaka.jpg" target="_blank" rel="noopener">CC BY 2.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Gipuzkoa">
+        <div class="loc-img">
+          <img src="images/san-sebastian.jpg" alt="San Sebastián" loading="lazy" />
+          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+        </div>
+        <div class="loc-body">
+          <h3>San Sebastián</h3>
+          <div class="alt">Donostia</div>
+          <p>A belle-époque seaside jewel, famed for the perfect shell-shaped La Concha bay and one of the highest concentrations of Michelin stars on Earth. Elegant boulevards, pintxos bars and Mount Igueldo frame the view.</p>
+          <div class="chips"><span class="chip">City</span><span class="chip">Food</span></div>
+          <div class="credit">Photo: Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3ASan_Sebasti%C3%A1n_-_Ayuntamiento_10.jpg" target="_blank" rel="noopener">CC0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Gipuzkoa">
+        <div class="loc-img">
+          <img src="images/zumaia-flysch.jpg" alt="Zumaia Flysch" loading="lazy" />
+          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+        </div>
+        <div class="loc-body">
+          <h3>Zumaia Flysch</h3>
+          <div class="alt">Zumaia</div>
+          <p>Layered rock formations that read like the pages of a giant book, recording 60 million years of Earth&#x27;s history. The cliffs of Itzurun beach are a pilgrimage site for geologists and photographers alike.</p>
+          <div class="chips"><span class="chip">Natural Wonder</span><span class="chip">Geology</span></div>
+          <div class="credit">Photo: https://www.flickr.com/people/frescotours/ · <a href="https://commons.wikimedia.org/wiki/File%3AZumaiaren_ikuspegi_orokorra.jpg" target="_blank" rel="noopener">CC BY 2.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Gipuzkoa">
+        <div class="loc-img">
+          <img src="images/hondarribia.jpg" alt="Hondarribia" loading="lazy" />
+          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+        </div>
+        <div class="loc-body">
+          <h3>Hondarribia</h3>
+          <div class="alt">Hondarribia</div>
+          <p>A fortified border town opposite Hendaye, with a walled medieval centre, a castle that is now a parador, and a colourful fishermen&#x27;s quarter right on the estuary.</p>
+          <div class="chips"><span class="chip">Town</span><span class="chip">Coast</span></div>
+          <div class="credit">Photo: JLPC · <a href="https://commons.wikimedia.org/wiki/File%3AFontarrabie_depuis_Hendaye_2012.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Gipuzkoa">
+        <div class="loc-img">
+          <img src="images/onati.jpg" alt="Oñati" loading="lazy" />
+          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+        </div>
+        <div class="loc-body">
+          <h3>Oñati</h3>
+          <div class="alt">Oñate</div>
+          <p>Home to the oldest university in the Basque Country (1540). Its arcaded main square and Renaissance college make it one of the region&#x27;s finest historic towns — and a gateway to the mountains of Arantzazu.</p>
+          <div class="chips"><span class="chip">Heritage</span><span class="chip">Town</span></div>
+          <div class="credit">Photo: Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3AO%C3%B1ate_1.jpg" target="_blank" rel="noopener">CC0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Gipuzkoa">
+        <div class="loc-img">
+          <img src="images/arantzazu.jpg" alt="Sanctuary of Arantzazu" loading="lazy" />
+          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+        </div>
+        <div class="loc-body">
+          <h3>Sanctuary of Arantzazu</h3>
+          <div class="alt">Arantzazuko santutegia</div>
+          <p>A bold modern basilica set deep in the Aizkorri mountains, adorned with monumental sculptures by Jorge Oteiza and work by Eduardo Chillida. A spiritual and artistic landmark of the Basque cultural revival.</p>
+          <div class="chips"><span class="chip">Heritage</span><span class="chip">Art</span></div>
+          <div class="credit">Photo: Keta · <a href="https://commons.wikimedia.org/wiki/File%3AArantzazuko_santutegiko_ikuspegia.jpg" target="_blank" rel="noopener">CC BY-SA 2.5</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Gipuzkoa">
+        <div class="loc-img">
+          <img src="images/loyola.jpg" alt="Sanctuary of Loyola" loading="lazy" />
+          <span class="region-badge" style="--rc:#0b7a3b">Gipuzkoa</span>
+        </div>
+        <div class="loc-body">
+          <h3>Sanctuary of Loyola</h3>
+          <div class="alt">Loiolako santutegia</div>
+          <p>The birthplace of St. Ignatius of Loyola, founder of the Jesuits. The monumental baroque sanctuary, crowned by an immense gilded dome, is one of the grandest religious complexes in Spain.</p>
+          <div class="chips"><span class="chip">Heritage</span><span class="chip">Spiritual</span></div>
+          <div class="credit">Photo: Theklan · <a href="https://commons.wikimedia.org/wiki/File%3ABasilica_of_St._Ignatius_in_Loyola_%28contrasted%29.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Araba">
+        <div class="loc-img">
+          <img src="images/vitoria-gasteiz.jpg" alt="Vitoria-Gasteiz" loading="lazy" />
+          <span class="region-badge" style="--rc:#b06a00">Araba</span>
+        </div>
+        <div class="loc-body">
+          <h3>Vitoria-Gasteiz</h3>
+          <div class="alt">Gasteiz</div>
+          <p>The Basque Country&#x27;s capital and a European pioneer of green urban living. Its medieval, almond-shaped old town and the Plaza de la Virgen Blanca sit beside a celebrated “green ring” of parks.</p>
+          <div class="chips"><span class="chip">City</span><span class="chip">Green</span></div>
+          <div class="credit">Photo: Zarateman · <a href="https://commons.wikimedia.org/wiki/File%3AVitoria_-_Plaza_de_la_Virgen_Blanca%2C_Escultura_vegetal_Vitoria_Gasteiz_%21.jpg" target="_blank" rel="noopener">CC0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Araba">
+        <div class="loc-img">
+          <img src="images/laguardia.jpg" alt="Laguardia" loading="lazy" />
+          <span class="region-badge" style="--rc:#b06a00">Araba</span>
+        </div>
+        <div class="loc-body">
+          <h3>Laguardia</h3>
+          <div class="alt">Guardia</div>
+          <p>A hilltop medieval town ringed by walls in the heart of the Rioja Alavesa wine country. Its bodegas, cobbled lanes and vineyard views make it the capital of Basque wine tourism.</p>
+          <div class="chips"><span class="chip">Wine Country</span><span class="chip">Heritage</span></div>
+          <div class="credit">Photo: Mikel Arrazola · <a href="https://commons.wikimedia.org/wiki/File%3AGuardia_airetik2.jpg" target="_blank" rel="noopener">CC BY 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Araba">
+        <div class="loc-img">
+          <img src="images/anana.jpg" alt="Salinas de Añana" loading="lazy" />
+          <span class="region-badge" style="--rc:#b06a00">Araba</span>
+        </div>
+        <div class="loc-body">
+          <h3>Salinas de Añana</h3>
+          <div class="alt">Añanako Gatz Harana</div>
+          <p>A rare inland salt valley with thousands of wooden evaporation terraces, worked since Roman times. This extraordinary, UNESCO-recognised landscape is one of the oldest salt-production sites in Europe.</p>
+          <div class="chips"><span class="chip">UNESCO</span><span class="chip">Heritage</span></div>
+          <div class="credit">Photo: Basotxerri · <a href="https://commons.wikimedia.org/wiki/File%3ASalinas_de_A%C3%B1ana_-_Pueblo_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Navarre">
+        <div class="loc-img">
+          <img src="images/pamplona.jpg" alt="Pamplona" loading="lazy" />
+          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+        </div>
+        <div class="loc-body">
+          <h3>Pamplona</h3>
+          <div class="alt">Iruñea</div>
+          <p>Capital of Navarre and famous the world over for San Fermín, when runners sprint ahead of bulls through the streets. Its Gothic cathedral, star-shaped citadel and pintxos scene reward visitors all year round.</p>
+          <div class="chips"><span class="chip">City</span><span class="chip">Festival</span></div>
+          <div class="credit">Photo: José Luis Filpo Cabana · <a href="https://commons.wikimedia.org/wiki/File%3AMonumento_a_los_Fueros_%28Pamplona%29.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Navarre">
+        <div class="loc-img">
+          <img src="images/roncesvalles.jpg" alt="Roncesvalles" loading="lazy" />
+          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+        </div>
+        <div class="loc-body">
+          <h3>Roncesvalles</h3>
+          <div class="alt">Orreaga</div>
+          <p>A legendary pass on the Camino de Santiago, where Roland&#x27;s epic battle was fought. Its Gothic collegiate church and monastery have welcomed weary pilgrims for a thousand years.</p>
+          <div class="chips"><span class="chip">Heritage</span><span class="chip">Camino</span></div>
+          <div class="credit">Photo: Hayden Soloviev · <a href="https://commons.wikimedia.org/wiki/File%3AColegiata_de_Santa_Mar%C3%ADa_de_Roncesvalles_%28Collegiate_Church_of_Roncesvalles%29%2C_Navarre%2C_Spain.jpg" target="_blank" rel="noopener">CC BY 4.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Navarre">
+        <div class="loc-img">
+          <img src="images/ujue.jpg" alt="Ujué" loading="lazy" />
+          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+        </div>
+        <div class="loc-body">
+          <h3>Ujué</h3>
+          <div class="alt">Uxue</div>
+          <p>A tiny hilltop village crowned by a fortified Romanesque church, offering sweeping views across Navarre. Its honey-coloured lanes feel frozen in the Middle Ages.</p>
+          <div class="chips"><span class="chip">Village</span><span class="chip">Heritage</span></div>
+          <div class="credit">Photo: Adbar · <a href="https://commons.wikimedia.org/wiki/File%3AUju%C3%A9.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Navarre">
+        <div class="loc-img">
+          <img src="images/zugarramurdi.jpg" alt="Zugarramurdi" loading="lazy" />
+          <span class="region-badge" style="--rc:#6a2c8f">Navarre</span>
+        </div>
+        <div class="loc-body">
+          <h3>Zugarramurdi</h3>
+          <div class="alt">Zugarramurdi</div>
+          <p>A village of legend whose caves hosted the “witches of Zugarramurdi,” tried by the Inquisition in 1610. The vast limestone cavern and its museum tell one of Europe&#x27;s most famous witchcraft stories.</p>
+          <div class="chips"><span class="chip">Legend</span><span class="chip">Nature</span></div>
+          <div class="credit">Photo: GaÃ«l Chardon · <a href="https://commons.wikimedia.org/wiki/File%3AZugarramurdi._Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Iparralde">
+        <div class="loc-img">
+          <img src="images/biarritz.jpg" alt="Biarritz" loading="lazy" />
+          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+        </div>
+        <div class="loc-body">
+          <h3>Biarritz</h3>
+          <div class="alt">Miarritze</div>
+          <p>The glamorous queen of the French Basque coast, once a favourite of Empress Eugénie and European royalty. Surf culture, a grand casino and the Rocher de la Vierge meet belle-époque elegance.</p>
+          <div class="chips"><span class="chip">Coast</span><span class="chip">City</span></div>
+          <div class="credit">Photo: Nicolas G. Mertens. This picture is not in the public domain. If you want to use this picture outside of Wikipedia, please read the Licensing section just below. In particular, &quot;You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&quot;
+
+Esta imagen no es de dominio público. Si desea utilizar esta imagen fuera de Wikipedia, lea la sección Licencias justo debajo. En particular, &quot;Debe dar el crédito apropiado, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de ninguna manera que sugiera que el licenciante lo respalda a usted o su uso.&quot; · <a href="https://commons.wikimedia.org/wiki/File%3ABiarritz%E2%80%94View_from_Esplanade_Elisabeth_II.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Iparralde">
+        <div class="loc-img">
+          <img src="images/bayonne.jpg" alt="Bayonne" loading="lazy" />
+          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+        </div>
+        <div class="loc-body">
+          <h3>Bayonne</h3>
+          <div class="alt">Baiona</div>
+          <p>A cultured river port known for its Gothic cathedral, half-timbered houses and — above all — its chocolate. Bayonne gave France its chocolate trade and remains a gourmet capital of the north.</p>
+          <div class="chips"><span class="chip">City</span><span class="chip">Food</span></div>
+          <div class="credit">Photo: Daniel VILLAFRUELA · <a href="https://commons.wikimedia.org/wiki/File%3ABayonne-Centre_historique-20130811.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Iparralde">
+        <div class="loc-img">
+          <img src="images/saint-jean-de-luz.jpg" alt="Saint-Jean-de-Luz" loading="lazy" />
+          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+        </div>
+        <div class="loc-body">
+          <h3>Saint-Jean-de-Luz</h3>
+          <div class="alt">Donibane Lohizune</div>
+          <p>A sheltered fishing port and royal wedding town, where Louis XIV married María Teresa in 1660. A crescent bay, colourful Basque houses and a lively old harbour make it irresistible.</p>
+          <div class="chips"><span class="chip">Coast</span><span class="chip">Town</span></div>
+          <div class="credit">Photo: Unknown · <a href="https://commons.wikimedia.org/wiki/File%3AFrance-Saint-Jean-de-Luz-2005-08-05.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></div>
+        </div>
+      </article>
+      <article class="loc" data-region="Iparralde">
+        <div class="loc-img">
+          <img src="images/la-rhune.jpg" alt="La Rhune" loading="lazy" />
+          <span class="region-badge" style="--rc:#1c6ea4">Iparralde</span>
+        </div>
+        <div class="loc-body">
+          <h3>La Rhune</h3>
+          <div class="alt">Larrun</div>
+          <p>The western Pyrenees&#x27; signature peak (905 m), climbed by a charming 1924 rack railway. Panoramic views sweep across the coast, the mountains and both sides of the French–Spanish border.</p>
+          <div class="chips"><span class="chip">Mountain</span><span class="chip">Nature</span></div>
+          <div class="credit">Photo: Basotxerri · <a href="https://commons.wikimedia.org/wiki/File%3ALarrun_-BT-_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></div>
+        </div>
+      </article>
+  </div>
+</div></section>
+
+<div class="wrap" id="credits">
+  <details class="credits">
+    <summary>Image credits &amp; licences (© their respective authors, via Wikimedia Commons)</summary>
+    <ul><li>Tommie Hansen, Ardfern, Tomas Fano, 0Igor González Martín, Jesús Ignacio Bravo Soler, Pedro J Pacheco, Irekia/Gobierno Vasco, Euskaldunaa, Basotxerri, Eric Fischer, Tiia Monto, pictures Jettcom y Zarateman — <a href="https://commons.wikimedia.org/wiki/File%3ACollage_de_Bilbao%2C_Pa%C3%ADs_Vasco%2C_Espa%C3%B1a.png" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Naotake Murayama — <a href="https://commons.wikimedia.org/wiki/File%3AMuseo_Guggenheim%2C_Bilbao_%2831273245344%29.jpg" target="_blank" rel="noopener">CC BY 2.0</a></li><li>Clementp.fr — <a href="https://commons.wikimedia.org/wiki/File%3AGaztelugatxe_en_espagne.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Mikel Arrazola — <a href="https://commons.wikimedia.org/wiki/File%3AMundaka%2C_Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY 3.0 es</a></li><li>Papamanila — <a href="https://commons.wikimedia.org/wiki/File%3AArbol_de_Gernika_d%C3%ADa.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Javier Mediavilla Ezquibela
+
+
+ Esta imagen tiene una licencia libre (que puedes ver abajo), pero si la usas fuera de los proyectos de Wikimedia, me gustaría que me informaras.  Gracias de antemano.
+
+Javier Mediavilla Ezquibela, autor de la fotografía
+ This image is under a free license (see below), but if you use it outwith Wikimedia projects, I&#x27;d like to be informed.  Thanks in advance.
+
+Javier Mediavilla Ezquibela, author of the  picture — <a href="https://commons.wikimedia.org/wiki/File%3AZubia_jun.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></li><li>Zarateman — <a href="https://commons.wikimedia.org/wiki/File%3ASan_Sebasti%C3%A1n_-_Ayuntamiento_10.jpg" target="_blank" rel="noopener">CC0</a></li><li>https://www.flickr.com/people/frescotours/ — <a href="https://commons.wikimedia.org/wiki/File%3AZumaiaren_ikuspegi_orokorra.jpg" target="_blank" rel="noopener">CC BY 2.0</a></li><li>JLPC — <a href="https://commons.wikimedia.org/wiki/File%3AFontarrabie_depuis_Hendaye_2012.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Zarateman — <a href="https://commons.wikimedia.org/wiki/File%3AO%C3%B1ate_1.jpg" target="_blank" rel="noopener">CC0</a></li><li>Keta — <a href="https://commons.wikimedia.org/wiki/File%3AArantzazuko_santutegiko_ikuspegia.jpg" target="_blank" rel="noopener">CC BY-SA 2.5</a></li><li>Theklan — <a href="https://commons.wikimedia.org/wiki/File%3ABasilica_of_St._Ignatius_in_Loyola_%28contrasted%29.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Zarateman — <a href="https://commons.wikimedia.org/wiki/File%3AVitoria_-_Plaza_de_la_Virgen_Blanca%2C_Escultura_vegetal_Vitoria_Gasteiz_%21.jpg" target="_blank" rel="noopener">CC0</a></li><li>Mikel Arrazola — <a href="https://commons.wikimedia.org/wiki/File%3AGuardia_airetik2.jpg" target="_blank" rel="noopener">CC BY 3.0</a></li><li>Basotxerri — <a href="https://commons.wikimedia.org/wiki/File%3ASalinas_de_A%C3%B1ana_-_Pueblo_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>José Luis Filpo Cabana — <a href="https://commons.wikimedia.org/wiki/File%3AMonumento_a_los_Fueros_%28Pamplona%29.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Hayden Soloviev — <a href="https://commons.wikimedia.org/wiki/File%3AColegiata_de_Santa_Mar%C3%ADa_de_Roncesvalles_%28Collegiate_Church_of_Roncesvalles%29%2C_Navarre%2C_Spain.jpg" target="_blank" rel="noopener">CC BY 4.0</a></li><li>Adbar — <a href="https://commons.wikimedia.org/wiki/File%3AUju%C3%A9.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>GaÃ«l Chardon — <a href="https://commons.wikimedia.org/wiki/File%3AZugarramurdi._Euskal_Herria.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></li><li>Nicolas G. Mertens. This picture is not in the public domain. If you want to use this picture outside of Wikipedia, please read the Licensing section just below. In particular, &quot;You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.&quot;
+
+Esta imagen no es de dominio público. Si desea utilizar esta imagen fuera de Wikipedia, lea la sección Licencias justo debajo. En particular, &quot;Debe dar el crédito apropiado, proporcionar un enlace a la licencia e indicar si se realizaron cambios. Puede hacerlo de cualquier manera razonable, pero no de ninguna manera que sugiera que el licenciante lo respalda a usted o su uso.&quot; — <a href="https://commons.wikimedia.org/wiki/File%3ABiarritz%E2%80%94View_from_Esplanade_Elisabeth_II.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Daniel VILLAFRUELA — <a href="https://commons.wikimedia.org/wiki/File%3ABayonne-Centre_historique-20130811.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Unknown — <a href="https://commons.wikimedia.org/wiki/File%3AFrance-Saint-Jean-de-Luz-2005-08-05.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></li><li>Basotxerri — <a href="https://commons.wikimedia.org/wiki/File%3ALarrun_-BT-_01.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></li><li>Eltito — <a href="https://commons.wikimedia.org/wiki/File%3AMundaka.jpg" target="_blank" rel="noopener">CC BY 2.0</a></li></ul>
+  </details>
+  <footer>
+    A fan-made, informational guide to the iconic locations of the Basque Country / Euskal Herria.
+    Descriptions are provided in good faith; photographs are credited to their authors under their
+    respective licences.
+  </footer>
+</div>
+
+<script>
+  const btns = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.loc');
+  btns.forEach(b => b.addEventListener('click', () => {
+    btns.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    const f = b.dataset.f;
+    cards.forEach(c => {
+      c.classList.toggle('hide', !(f === 'all' || c.dataset.region === f));
+    });
+  }));
+</script>
+
+</body>
+</html>
